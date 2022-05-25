@@ -1,5 +1,5 @@
-import Today from "../containers/Today";
+import TenDay from "../containers/TenDay";
 
 export default function Home() {
-  return <Today />;
+  return <TenDay />;
 }

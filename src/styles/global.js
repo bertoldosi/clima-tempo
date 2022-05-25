@@ -3,6 +3,22 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 
 
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+
+
 html,body{
   box-sizing: border-box;
   margin: 0;
@@ -13,12 +29,13 @@ html,body{
 
   body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: ${(props) => props.theme.backgroundColorPrimary};
     font-family: ${(props) => props.theme.textFontFamilyDefault} ;
     color: ${(props) => props.theme.textColorPrimary} ;
-    padding: 2rem;
+    padding: 1rem;
     font-weight: 100;
+    overflow-x: hidden;
   }
 
   h1, h2, h3{
@@ -29,6 +46,11 @@ html,body{
   input{
     font-family: ${(props) => props.theme.textFontFamilyDefault} ;
     outline: none;
+  }
+
+  p{
+    margin: 0;
+    padding: 0;
   }
 
 `;

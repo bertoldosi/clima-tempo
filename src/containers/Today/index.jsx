@@ -4,17 +4,15 @@ import Wrapper from "../../components/Wrapper";
 import Search from "../../components/Search";
 import Clock from "../../components/Clock";
 import HeaderToggle from "../../components/HeaderToggle";
-
-import { Container } from "./styles";
+import Temperature from "../../components/Temperature";
 
 const Today = () => {
   return (
     <Wrapper>
-      <Container>
-        <Search />
-        <HeaderToggle />
-        <Clock />
-      </Container>
+      <Search />
+      <HeaderToggle />
+      <Temperature />
+      <Clock />
     </Wrapper>
   );
 };
