@@ -1,12 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from './styles';
+import Wrapper from "../../components/Wrapper";
+import Search from "../../components/Search";
+import Clock from "../../components/Clock";
+import HeaderToggle from "../../components/HeaderToggle";
+
+import { Container } from "./styles";
 
 const Today = () => {
   return (
-    <Container>
-      <h1>Today</h1>
-    </Container>
+    <Wrapper>
+      <Container>
+        <Search />
+        <HeaderToggle />
+        <Clock />
+      </Container>
+    </Wrapper>
   );
 };
 

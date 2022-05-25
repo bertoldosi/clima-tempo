@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container } from "./styles";
-import Time from "../../components/Time";
+import Time from "../Time";
 
 const Clock = () => {
   return (

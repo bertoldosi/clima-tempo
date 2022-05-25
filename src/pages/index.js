@@ -1,5 +1,5 @@
-import Wrapper from "../containers/Wrapper";
+import Today from "../containers/Today";
 
 export default function Home() {
-  return <Wrapper />;
+  return <Today />;
 }
