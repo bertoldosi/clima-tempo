@@ -1,7 +1,5 @@
+import Wrapper from "../containers/Wrapper";
+
 export default function Home() {
-  return (
-    <div>
-      <h1>Hello word!</h1>
-    </div>
-  );
+  return <Wrapper />;
 }
