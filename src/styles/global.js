@@ -29,7 +29,6 @@ html,body{
 
   body {
     width: 100%;
-    height: 100%;
     background: ${(props) => props.theme.backgroundColorPrimary};
     font-family: ${(props) => props.theme.textFontFamilyDefault} ;
     color: ${(props) => props.theme.textColorPrimary} ;
