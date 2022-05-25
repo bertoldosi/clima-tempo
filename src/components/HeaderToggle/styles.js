@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.nav`
   margin-bottom: 5rem;
@@ -12,17 +12,17 @@ export const Container = styled.nav`
     li {
       font-size: 1.5rem;
       padding: 1rem;
-
-      a {
-        color: ${(props) => props.theme.textColorPrimary};
-        text-decoration: none;
-      }
-    }
-
-    li:nth-child(3) {
-      a {
-        border-bottom: 2px solid ${(props) => props.theme.textColorPrimary};
-      }
     }
   }
+`;
+
+export const Link = styled.a`
+  color: ${(props) => props.theme.textColorPrimary};
+  text-decoration: none;
+
+  ${(props) =>
+    props.isSelected &&
+    css`
+      border-bottom: 2px solid ${(props) => props.theme.textColorPrimary};
+    `}
 `;

@@ -3,8 +3,8 @@ import React from "react";
 import { Container, Day, Weather } from "./styles";
 
 const List = ({ listWeather }) => {
-  return listWeather.map((weather) => (
-    <Container>
+  return listWeather.map((weather, index) => (
+    <Container key={index}>
       <Day>
         <strong>{weather.date}</strong>
         <span>{weather.textWeather}</span>

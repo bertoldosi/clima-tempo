@@ -1,21 +1,47 @@
 import React from "react";
 
-import { Container } from "./styles";
+import { Container, Link } from "./styles";
+
+import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const HeaderToggle = () => {
+  const { wrapperType, setWrapperType } = UseAppContext();
+
   return (
     <Container>
       <ul>
         <li>
-          <a href="/">Hoje</a>
+          <Link
+            isSelected={wrapperType === "TO_DAY"}
+            href="#today"
+            onClick={() => {
+              setWrapperType("TO_DAY");
+            }}
+          >
+            Hoje
+          </Link>
         </li>
         <li>
-          <a href="/tomohow">Amanhã</a>
+          <Link
+            isSelected={wrapperType === "TOMORROW"}
+            href="#tomorrow"
+            onClick={() => {
+              setWrapperType("TOMORROW");
+            }}
+          >
+            Amanhã
+          </Link>
         </li>
         <li>
-          <a href="/10dias" isSelected={true}>
+          <Link
+            isSelected={wrapperType === "TEN_DAY"}
+            href="#ten-day"
+            onClick={() => {
+              setWrapperType("TEN_DAY");
+            }}
+          >
             10 dias
-          </a>
+          </Link>
         </li>
       </ul>
     </Container>
