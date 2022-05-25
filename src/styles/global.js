@@ -33,7 +33,7 @@ html,body{
     background: ${(props) => props.theme.backgroundColorPrimary};
     font-family: ${(props) => props.theme.textFontFamilyDefault} ;
     color: ${(props) => props.theme.textColorPrimary} ;
-    padding: 1rem;
+    padding: 2rem 1rem; 
     font-weight: 100;
     overflow-x: hidden;
   }

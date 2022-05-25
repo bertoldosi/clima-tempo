@@ -35,7 +35,7 @@ const Temperature = ({
         <span>Sensação {sensation}°</span>
       </Temp>
       <Weather>
-        <CeuLimpo width={100} height={96} />
+        <CeuLimpo width={90} height={96} />
         <p>{textWeather}</p>
       </Weather>
     </Container>

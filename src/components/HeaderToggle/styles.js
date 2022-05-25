@@ -25,4 +25,12 @@ export const Link = styled.a`
     css`
       border-bottom: 2px solid ${(props) => props.theme.textColorPrimary};
     `}
+
+  ${(props) =>
+    !props.isSelected &&
+    css`
+      &:hover {
+        border-bottom: 2px dashed ${(props) => props.theme.textColorPrimary};
+      }
+    `}
 `;

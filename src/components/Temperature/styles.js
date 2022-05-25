@@ -42,8 +42,9 @@ export const Weather = styled.div`
 
   p {
     max-width: 15rem;
-    line-height: 1.6rem;
+    line-height: 2rem;
     font-size: 1.2rem;
     text-align: center;
+    margin-top: 1rem;
   }
 `;
