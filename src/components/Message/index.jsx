@@ -2,11 +2,11 @@ import React from "react";
 
 import { Container } from "./styles";
 
-const Message = () => {
+const Message = ({ date }) => {
   return (
     <Container>
       {/* <h1>00:00:00</h1> */}
-      <h2>Sábado, 21 de Maio 2022</h2>
+      <h2>{date}</h2>
       <h3>Rio Branco - AC</h3>
       <p>
         As pessoas costumam dizer que a motivação não dura sempre. Bem, nem o

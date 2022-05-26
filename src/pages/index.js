@@ -1,4 +1,4 @@
-import ToDay from "../containers/Today";
+import Today from "../containers/Today";
 import Tomorrow from "../containers/Tomorrow";
 import TenDay from "../containers/TenDay";
 
@@ -8,7 +8,7 @@ export default function Home() {
   const { wrapperType } = UseAppContext();
 
   const ComponentMap = {
-    TO_DAY: <ToDay />,
+    TODAY: <Today />,
     TOMORROW: <Tomorrow />,
     TEN_DAY: <TenDay />,
   };

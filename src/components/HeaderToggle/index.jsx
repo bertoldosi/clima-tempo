@@ -12,10 +12,10 @@ const HeaderToggle = () => {
       <ul>
         <li>
           <Link
-            isSelected={wrapperType === "TO_DAY"}
+            isSelected={wrapperType === "TODAY"}
             href="#today"
             onClick={() => {
-              setWrapperType("TO_DAY");
+              setWrapperType("TODAY");
             }}
           >
             Hoje

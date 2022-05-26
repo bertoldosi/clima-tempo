@@ -1,6 +1,9 @@
+import { formatDate } from "../../helpers/formatDate";
 import { kelvinToCelsius } from "../../helpers/kelvinToCelsius";
 
 export const bolerplate = (data) => {
+  localStorage.setItem("@date-clima-tomorrow", formatDate(data.dt));
+
   const weather = {
     tempDay: kelvinToCelsius(data.temp.day),
     tempNight: kelvinToCelsius(data.temp.night),

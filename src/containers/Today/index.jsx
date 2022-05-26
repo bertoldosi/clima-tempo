@@ -11,6 +11,7 @@ import Loading from "../../components/Loading";
 
 const Today = () => {
   const [weatherToday, setWeatherToday] = React.useState();
+  const [date, setDate] = React.useState();
 
   React.useEffect(() => {
     if (navigator.geolocation) {
@@ -19,6 +20,8 @@ const Today = () => {
           position.coords.latitude,
           position.coords.longitude
         );
+
+        setDate(localStorage.getItem("@date-clima-today"));
 
         setWeatherToday(bolerplate(data));
       });
@@ -30,11 +33,13 @@ const Today = () => {
       <Search />
       <HeaderToggle />
       {weatherToday ? (
-        <Temperature weather={weatherToday} />
+        <>
+          <Temperature weather={weatherToday} />
+          <Message date={date} />
+        </>
       ) : (
         <Loading width={150} height={150} />
       )}
-      <Message />
     </Wrapper>
   );
 };
