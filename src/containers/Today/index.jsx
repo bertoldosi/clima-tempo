@@ -5,21 +5,22 @@ import Search from "../../components/Search";
 import Message from "../../components/Message";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
-import { GetWeatherToDay } from "../../api/weather";
+import { GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import Loading from "../../components/Loading";
 
 const Today = () => {
-  const [weatherToDay, setWeatherToDay] = React.useState();
+  const [weatherToday, setWeatherToday] = React.useState();
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
-        const { data } = await GetWeatherToDay(
+        const { data } = await GetWeatherToday(
           position.coords.latitude,
           position.coords.longitude
         );
-        setWeatherToDay(bolerplate(data));
+
+        setWeatherToday(bolerplate(data));
       });
     }
   }, []);
@@ -28,8 +29,8 @@ const Today = () => {
     <Wrapper>
       <Search />
       <HeaderToggle />
-      {weatherToDay ? (
-        <Temperature weather={weatherToDay} />
+      {weatherToday ? (
+        <Temperature weather={weatherToday} />
       ) : (
         <Loading width={150} height={150} />
       )}

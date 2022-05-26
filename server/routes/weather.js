@@ -49,21 +49,21 @@ const mockResponse = {
 
 const APPID = process.env.REACT_APP_APPID;
 
-router.get("/one-day", async (req, res) => {
-  // const { lat, lon } = req.query;
+router.get("/today", async (req, res) => {
+  const { lat, lon } = req.query;
 
   try {
-    // const response = await api.get("/weather", {
-    //   params: {
-    //     lat,
-    //     lon,
-    //     appid: APPID,
-    //     lang: "pt_br",
-    //   },
-    // });
+    const response = await api.get("/weather", {
+      params: {
+        lat,
+        lon,
+        appid: APPID,
+        lang: "pt_br",
+      },
+    });
 
-    // res.status(200).send(response.data);
-    res.status(200).send(mockResponse);
+    res.status(200).send(response.data);
+    // res.status(200).send(mockResponse);
   } catch (error) {
     res.status(error.response.status).send(error);
   }

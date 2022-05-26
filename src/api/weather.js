@@ -1,7 +1,7 @@
 import apiGateway from "../lib/axios-instance-local";
 
-export const GetWeatherToDay = async (lat, lon) => {
+export const GetWeatherToday = async (lat, lon) => {
   const params = { lat, lon };
 
-  return apiGateway.get("/weather/one-day", { params });
+  return apiGateway.get("/weather/today", { params });
 };
