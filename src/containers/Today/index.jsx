@@ -5,28 +5,29 @@ import Search from "../../components/Search";
 import Clock from "../../components/Clock";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
+import { GetWeatherToDay } from "../../api/weather";
+import { bolerplate } from "./bolerplate";
 
 const Today = () => {
-  // const [geolocation, setGeolocation] = React.useState("");
+  const [weatherToDay, setWeatherToDay] = React.useState({
+    temp_max: "",
+    temp_min: "",
+    temp: "",
+    sensation: "",
+    textWeather: "",
+  });
 
-  // React.useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     if (navigator.geolocation) {
-  //       navigator.geolocation.getCurrentPosition((position) => {
-  //         setGeolocation({
-  //           lat: position.coords.latitude,
-  //           lon: position.coords.longitude,
-  //         });
-  //       });
-  //     }
-  //   }
-  // }, []);
+  React.useEffect(async () => {
+    const { data } = await GetWeatherToDay("-10.0007936", "-67.7937152");
+
+    setWeatherToDay(bolerplate(data));
+  }, []);
 
   return (
     <Wrapper>
       <Search />
       <HeaderToggle />
-      <Temperature />
+      <Temperature weather={weatherToDay} />
       <Clock />
     </Wrapper>
   );

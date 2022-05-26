@@ -7,17 +7,19 @@ import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
 
 const Tomorrow = () => {
+  const [weatherTomorrow, setWeatherTomorrow] = React.useState({
+    temp_max: "25",
+    temp_min: "24",
+    temp: "25",
+    sensation: "28",
+    textWeather: "ceú limpo",
+  });
+
   return (
     <Wrapper>
       <Search />
       <HeaderToggle />
-      <Temperature
-        maxDay="35"
-        maxNigth="20"
-        temperature="35"
-        sensation="40"
-        textWeather="Céu limpo"
-      />
+      <Temperature weather={weatherTomorrow} />
       <Clock />
     </Wrapper>
   );
