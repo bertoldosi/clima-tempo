@@ -5,21 +5,35 @@ import Search from "../../components/Search";
 import Message from "../../components/Message";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
+import { bolerplate } from "./bolerplate";
+import { GetWeatherTomorrow } from "../../api/weather";
+import Loading from "../../components/Loading";
 
 const Tomorrow = () => {
-  const [weatherTomorrow, setWeatherTomorrow] = React.useState({
-    temp_max: "25",
-    temp_min: "24",
-    temp: "25",
-    sensation: "28",
-    textWeather: "ceú limpo",
-  });
+  const [weatherTomorrow, setWeatherTomorrow] = React.useState();
+
+  React.useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { data } = await GetWeatherTomorrow(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
+        setWeatherTomorrow(bolerplate(data));
+      });
+    }
+  }, []);
 
   return (
     <Wrapper>
       <Search />
       <HeaderToggle />
-      <Temperature weather={weatherTomorrow} />
+      {weatherTomorrow ? (
+        <Temperature weather={weatherTomorrow} />
+      ) : (
+        <Loading width={150} height={150} />
+      )}
       <Message />
     </Wrapper>
   );

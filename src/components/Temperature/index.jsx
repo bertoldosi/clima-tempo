@@ -6,19 +6,19 @@ import CeuLimpo from "../../icons/CeuLimpo";
 import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
 const Temperature = ({ weather }) => {
-  const { temp_max, temp_min, temp, sensation, textWeather } = weather;
+  const { tempDay, tempNight, temp, sensation, textWeather } = weather;
 
   return (
     <Container>
       <Temp>
         <MaxMin>
           <span>
-            Max {temp_max}°
+            Dia {tempDay}°
             <VscArrowSmallUp />
           </span>
 
           <span>
-            Min {temp_min}°
+            Noite {tempNight}°
             <VscArrowSmallDown />
           </span>
         </MaxMin>
