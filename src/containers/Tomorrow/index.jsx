@@ -2,7 +2,7 @@ import React from "react";
 
 import Wrapper from "../../components/Wrapper";
 import Search from "../../components/Search";
-import Clock from "../../components/Clock";
+import Message from "../../components/Message";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
 
@@ -20,7 +20,7 @@ const Tomorrow = () => {
       <Search />
       <HeaderToggle />
       <Temperature weather={weatherTomorrow} />
-      <Clock />
+      <Message />
     </Wrapper>
   );
 };

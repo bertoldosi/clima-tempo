@@ -2,7 +2,7 @@ import React from "react";
 
 import Wrapper from "../../components/Wrapper";
 import Search from "../../components/Search";
-import Clock from "../../components/Clock";
+import Message from "../../components/Message";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
 import { GetWeatherToDay } from "../../api/weather";
@@ -33,7 +33,7 @@ const Today = () => {
       ) : (
         <Loading width={150} height={150} />
       )}
-      <Clock />
+      <Message />
     </Wrapper>
   );
 };

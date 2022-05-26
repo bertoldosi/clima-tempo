@@ -2,10 +2,10 @@ import React from "react";
 
 import { Container } from "./styles";
 
-const Clock = () => {
+const Message = () => {
   return (
     <Container>
-      <h1>00:00:00</h1>
+      {/* <h1>00:00:00</h1> */}
       <h2>Sábado, 21 de Maio 2022</h2>
       <h3>Rio Branco - AC</h3>
       <p>
@@ -19,4 +19,4 @@ const Clock = () => {
   );
 };
 
-export default Clock;
+export default Message;
