@@ -7,92 +7,35 @@ import List from "../../components/List";
 
 import ParcialmenteNublado from "../../icons/ParcialmenteNublado";
 import CeuLimpo from "../../icons/CeuLimpo";
-
-const listWeather = [
-  {
-    date: "Hoje",
-    textWeather: "Claro com nuvens",
-    icon: <ParcialmenteNublado width={60} />,
-    max: "20",
-    min: "17",
-  },
-
-  {
-    date: "Quinta, 25 Mai",
-    textWeather: "Céu limpo",
-    icon: <CeuLimpo width={50} />,
-    max: "31",
-    min: "28",
-  },
-
-  {
-    date: "Hoje",
-    textWeather: "Claro com nuvens",
-    icon: <ParcialmenteNublado width={60} />,
-    max: "20",
-    min: "17",
-  },
-
-  {
-    date: "Quinta, 25 Mai",
-    textWeather: "Céu limpo",
-    icon: <CeuLimpo width={50} />,
-    max: "31",
-    min: "28",
-  },
-  {
-    date: "Hoje",
-    textWeather: "Claro com nuvens",
-    icon: <ParcialmenteNublado width={60} />,
-    max: "20",
-    min: "17",
-  },
-
-  {
-    date: "Quinta, 25 Mai",
-    textWeather: "Céu limpo",
-    icon: <CeuLimpo width={50} />,
-    max: "31",
-    min: "28",
-  },
-  {
-    date: "Hoje",
-    textWeather: "Claro com nuvens",
-    icon: <ParcialmenteNublado width={60} />,
-    max: "20",
-    min: "17",
-  },
-
-  {
-    date: "Quinta, 25 Mai",
-    textWeather: "Céu limpo",
-    icon: <CeuLimpo width={50} />,
-    max: "31",
-    min: "28",
-  },
-  {
-    date: "Hoje",
-    textWeather: "Claro com nuvens",
-    icon: <ParcialmenteNublado width={60} />,
-    max: "20",
-    min: "17",
-  },
-
-  {
-    date: "Quinta, 25 Mai",
-    textWeather: "Céu limpo",
-    icon: <CeuLimpo width={50} />,
-    max: "31",
-    min: "28",
-  },
-];
+import Loading from "../../components/Loading";
+import { GetWeatherWeek } from "../../api/weather";
+import { bolerplate } from "./bolerplate";
 
 const Week = () => {
+  const [weatherWeek, setWeatherWeek] = React.useState();
+
+  React.useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const { data } = await GetWeatherWeek(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
+        setWeatherWeek(bolerplate(data));
+      });
+    }
+  }, []);
+
   return (
     <Wrapper>
       <Search />
       <HeaderToggle />
-      <List listWeather={listWeather} />
+      {weatherWeek ? (
+        <List listWeather={weatherWeek} />
+      ) : (
+        <Loading width={150} height={150} />
+      )}
     </Wrapper>
   );
 };

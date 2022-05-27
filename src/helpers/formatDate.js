@@ -34,15 +34,9 @@ export const formatDate = (timestemp) => {
   const dayWeek = week[date.getDay()];
   const dayMonth = String(date.getDate()).padStart(2, "0");
   const monthYear =
-    month[
-      String(date.getMonth() + 1)
-        .padStart(2, "0")
-        .replace("0", "")
-    ];
+    month[String(date.getMonth()).padStart(2, "0").replace("0", "")];
 
-  const year = date.getFullYear();
-
-  const dateFormat = `${dayWeek}, ${dayMonth} de ${monthYear} de ${year}`;
+  const dateFormat = `${dayWeek}, ${dayMonth} de ${monthYear}`;
 
   return dateFormat;
 };

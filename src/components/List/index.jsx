@@ -6,15 +6,15 @@ const List = ({ listWeather }) => {
   return listWeather.map((weather, index) => (
     <Container key={index}>
       <Day>
-        <strong>{weather.date}</strong>
+        <strong>{weather.day}</strong>
         <span>{weather.textWeather}</span>
       </Day>
 
       <Weather>
         {weather.icon}
         <span>
-          <strong>{weather.max}°</strong>
-          <strong>{weather.min}°</strong>
+          <strong>{weather.temp_max}°</strong>
+          <strong>{weather.temp_min}°</strong>
         </span>
       </Weather>
     </Container>

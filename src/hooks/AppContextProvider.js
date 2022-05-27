@@ -7,7 +7,7 @@ export const UseAppContext = () => {
 };
 
 export const AppContextProvider = ({ children }) => {
-  const [wrapperType, setWrapperType] = useState("TODAY");
+  const [wrapperType, setWrapperType] = useState("WEEK");
 
   const AppContextObject = {
     wrapperType,

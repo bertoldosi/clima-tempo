@@ -11,3 +11,9 @@ export const GetWeatherTomorrow = async (lat, lon) => {
 
   return apiGateway.get("/weather/tomorrow", { params });
 };
+
+export const GetWeatherWeek = async (lat, lon) => {
+  const params = { lat, lon };
+
+  return apiGateway.get("/weather/week", { params });
+};
