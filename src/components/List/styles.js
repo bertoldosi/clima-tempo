@@ -28,6 +28,13 @@ export const Day = styled.div`
 
 export const Weather = styled.div`
   display: flex;
+  position: relative;
+
+  img {
+    top: -4rem;
+    right: 1rem;
+    position: absolute;
+  }
 
   span {
     display: flex;

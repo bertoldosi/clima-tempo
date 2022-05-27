@@ -2,16 +2,21 @@ import React from "react";
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
 
 import CeuLimpo from "../../icons/CeuLimpo";
+import { Weathers } from "../../icons/Weathers";
 
 import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
 const Temperature = ({ weather }) => {
-  const { tempDay, tempNight, temp, sensation, textWeather } = weather;
+  const { tempDay, tempNight, temp, sensation, textWeather, icon } = weather;
 
   return (
     <Container>
       <Temp>
         <MaxMin>
+          <strong>
+            {temp}
+            <p>°c</p>
+          </strong>
           <span>
             Dia {tempDay}°
             <VscArrowSmallUp />
@@ -23,15 +28,11 @@ const Temperature = ({ weather }) => {
           </span>
         </MaxMin>
 
-        <strong>
-          {temp}
-          <p>°c</p>
-        </strong>
-
         <span>Sensação {sensation}°</span>
       </Temp>
       <Weather>
-        <CeuLimpo width={90} height={96} />
+        {icon}
+
         <p>{textWeather}</p>
       </Weather>
     </Container>

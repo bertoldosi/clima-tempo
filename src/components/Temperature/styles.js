@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: 5rem;
-  margin-left: 2rem;
+  position: relative;
 `;
 
 export const Temperature = styled.div`
+  margin-left: 2rem;
+
   strong {
     display: flex;
     text-align: end;
@@ -26,6 +28,7 @@ export const Temperature = styled.div`
 
   span {
     font-size: 1.5rem;
+    line-height: 2rem;
   }
 `;
 
@@ -42,13 +45,19 @@ export const Weather = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+
+  img {
+    width: 15rem;
+  }
 
   p {
     max-width: 15rem;
     min-width: 15rem;
-    line-height: 2rem;
+
+    position: absolute;
     font-size: 1.2rem;
     text-align: center;
-    margin-top: 1rem;
+    bottom: 1.2rem;
   }
 `;

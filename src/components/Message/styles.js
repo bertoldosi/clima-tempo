@@ -13,11 +13,13 @@ export const Container = styled.div`
     font-family: ${(props) => props.theme.textFontFamilyTime};
   }
 
-  h2,
+  h2 {
+    font-size: 1.5rem;
+  }
+
   h3 {
     font-size: 1.2rem;
     font-weight: 100;
-    color: ${(props) => props.theme.textColorSecundary};
   }
 
   p {
