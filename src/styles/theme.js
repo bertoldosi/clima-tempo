@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 const common = {
   backgroundColorWhite: "white",
+  backgroundColorSecundary: "#2E2B2B",
 
   textFontFamilyDefault: "Kadwa, serif",
   textFontFamilyTime: "clockicons, sans-serif",

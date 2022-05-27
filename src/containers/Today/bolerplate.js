@@ -3,7 +3,6 @@ import { formatDate } from "../../helpers/formatDate";
 import { Weathers } from "../../icons/Weathers";
 
 export const bolerplate = (data) => {
-  console.log(data);
   const weather = {
     tempDay: kelvinToCelsius(data.temp.day),
     tempNight: kelvinToCelsius(data.temp.night),

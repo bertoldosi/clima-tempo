@@ -7,11 +7,22 @@ export const UseAppContext = () => {
 };
 
 export const AppContextProvider = ({ children }) => {
-  const [wrapperType, setWrapperType] = useState("WEEK");
+  const [wrapperType, setWrapperType] = useState("TODAY");
+  const [city, setCity] = useState({
+    nome: "",
+    latitude: "",
+    longitude: "",
+    uf: {
+      uf: "",
+      nome: "",
+    },
+  });
 
   const AppContextObject = {
     wrapperType,
     setWrapperType,
+    city,
+    setCity,
   };
 
   return (

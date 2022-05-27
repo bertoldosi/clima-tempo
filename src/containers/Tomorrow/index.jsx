@@ -8,9 +8,11 @@ import Temperature from "../../components/Temperature";
 import { bolerplate } from "./bolerplate";
 import { GetWeatherTomorrow } from "../../api/weather";
 import Loading from "../../components/Loading";
+import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Tomorrow = () => {
   const [weatherTomorrow, setWeatherTomorrow] = React.useState();
+  const { setCity } = UseAppContext;
 
   React.useEffect(() => {
     if (navigator.geolocation) {

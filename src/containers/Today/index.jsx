@@ -8,22 +8,12 @@ import Temperature from "../../components/Temperature";
 import { GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import Loading from "../../components/Loading";
+import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Today = () => {
   const [weatherToday, setWeatherToday] = React.useState();
 
-  React.useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
-        const { data } = await GetWeatherToday(
-          position.coords.latitude,
-          position.coords.longitude
-        );
-
-        setWeatherToday(bolerplate(data));
-      });
-    }
-  }, []);
+  const { setCity } = UseAppContext;
 
   React.useEffect(() => {
     if (navigator.geolocation) {
@@ -34,6 +24,8 @@ const Today = () => {
         );
 
         setWeatherToday(bolerplate(data));
+
+        console.log(data);
       });
     }
   }, []);
