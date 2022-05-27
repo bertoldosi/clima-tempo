@@ -87,7 +87,7 @@ const listWeather = [
   },
 ];
 
-const TenDay = () => {
+const Week = () => {
   return (
     <Wrapper>
       <Search />
@@ -97,4 +97,4 @@ const TenDay = () => {
   );
 };
 
-export default TenDay;
+export default Week;

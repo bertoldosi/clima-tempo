@@ -1,6 +1,6 @@
 import Today from "../containers/Today";
 import Tomorrow from "../containers/Tomorrow";
-import TenDay from "../containers/TenDay";
+import Week from "../containers/Week";
 
 import { UseAppContext } from "../hooks/AppContextProvider";
 
@@ -10,7 +10,7 @@ export default function Home() {
   const ComponentMap = {
     TODAY: <Today />,
     TOMORROW: <Tomorrow />,
-    TEN_DAY: <TenDay />,
+    WEEK: <Week />,
   };
 
   const getTemplate = (type) => ComponentMap[type];

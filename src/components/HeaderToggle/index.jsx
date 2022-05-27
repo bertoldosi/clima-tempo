@@ -34,13 +34,13 @@ const HeaderToggle = () => {
         </li>
         <li>
           <Link
-            isSelected={wrapperType === "TEN_DAY"}
+            isSelected={wrapperType === "WEEK"}
             href="#ten-day"
             onClick={() => {
-              setWrapperType("TEN_DAY");
+              setWrapperType("WEEK");
             }}
           >
-            10 dias
+            Semana
           </Link>
         </li>
       </ul>
