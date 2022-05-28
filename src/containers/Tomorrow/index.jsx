@@ -12,9 +12,14 @@ import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Tomorrow = () => {
   const [weatherTomorrow, setWeatherTomorrow] = React.useState();
-  const { setCity } = UseAppContext;
+  const { city } = UseAppContext();
 
-  React.useEffect(() => {
+  const getSearchWeatherTomorrow = async () => {
+    const { data } = await GetWeatherTomorrow(city?.latitude, city?.longitude);
+    setWeatherTomorrow(bolerplate(data));
+  };
+
+  const getWeatherTomorrow = async () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { data } = await GetWeatherTomorrow(
@@ -25,7 +30,19 @@ const Tomorrow = () => {
         setWeatherTomorrow(bolerplate(data));
       });
     }
+  };
+
+  React.useEffect(() => {
+    if (city?.nome) {
+      getSearchWeatherTomorrow();
+    } else {
+      getWeatherTomorrow();
+    }
   }, []);
+
+  React.useEffect(() => {
+    getSearchWeatherTomorrow();
+  }, [city]);
 
   return (
     <Wrapper>

@@ -324,60 +324,62 @@ const mock = [
   },
 ];
 
+const mockToday = {
+  dt: 1653667200,
+  sunrise: 1653648041,
+  sunset: 1653689781,
+  moonrise: 1653639480,
+  moonset: 1653682920,
+  moon_phase: 0.91,
+  temp: {
+    day: 300.71,
+    min: 294.28,
+    max: 302.51,
+    night: 296.03,
+    eve: 297.47,
+    morn: 294.28,
+  },
+  feels_like: {
+    day: 304.57,
+    night: 296.7,
+    eve: 298.36,
+    morn: 294.96,
+  },
+  pressure: 1014,
+  humidity: 83,
+  dew_point: 297.41,
+  wind_speed: 2.16,
+  wind_deg: 138,
+  wind_gust: 2.57,
+  weather: [
+    {
+      id: 501,
+      main: "Rain",
+      description: "chuva moderada",
+      icon: "10d",
+    },
+  ],
+  clouds: 17,
+  pop: 0.96,
+  rain: 5.25,
+  uvi: 9.44,
+};
+
 router.get("/today", async (req, res) => {
-  // const { lat, lon } = req.query;
+  const { lat, lon } = req.query;
 
   try {
-    // const response = await api.get("/onecall", {
-    //   params: {
-    //     lat,
-    //     lon,
-    //     appid: APPID,
-    //     lang: "pt_br",
-    //   },
-    // });
-
-    res.status(200).send({
-      dt: 1653667200,
-      sunrise: 1653648041,
-      sunset: 1653689781,
-      moonrise: 1653639480,
-      moonset: 1653682920,
-      moon_phase: 0.91,
-      temp: {
-        day: 300.71,
-        min: 294.28,
-        max: 302.51,
-        night: 296.03,
-        eve: 297.47,
-        morn: 294.28,
+    const response = await api.get("/onecall", {
+      params: {
+        lat,
+        lon,
+        appid: APPID,
+        lang: "pt_br",
       },
-      feels_like: {
-        day: 304.57,
-        night: 296.7,
-        eve: 298.36,
-        morn: 294.96,
-      },
-      pressure: 1014,
-      humidity: 83,
-      dew_point: 297.41,
-      wind_speed: 2.16,
-      wind_deg: 138,
-      wind_gust: 2.57,
-      weather: [
-        {
-          id: 501,
-          main: "Rain",
-          description: "chuva moderada",
-          icon: "10d",
-        },
-      ],
-      clouds: 17,
-      pop: 0.96,
-      rain: 5.25,
-      uvi: 9.44,
     });
-    // res.status(200).send(response.data.daily[0]);
+
+    // res.status(200).send(mockToday);
+    res.status(200).send(response.data.daily[0]);
   } catch (error) {
     res.status(error.response.status).send(error);
   }
@@ -403,20 +405,20 @@ router.get("/tomorrow", async (req, res) => {
 });
 
 router.get("/week", async (req, res) => {
-  // const { lat, lon } = req.query;
+  const { lat, lon } = req.query;
 
   try {
-    // const response = await api.get("/onecall", {
-    //   params: {
-    //     lat,
-    //     lon,
-    //     appid: APPID,
-    //     lang: "pt_br",
-    //   },
-    // });
+    const response = await api.get("/onecall", {
+      params: {
+        lat,
+        lon,
+        appid: APPID,
+        lang: "pt_br",
+      },
+    });
 
-    res.status(200).send(mock);
-    // res.status(200).send(response.data.daily);
+    // res.status(200).send(mock);
+    res.status(200).send(response.data.daily);
   } catch (error) {
     res.status(error.response.status).send(error);
   }

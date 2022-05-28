@@ -1,9 +1,6 @@
 import React from "react";
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
 
-import CeuLimpo from "../../icons/CeuLimpo";
-import { Weathers } from "../../icons/Weathers";
-
 import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
 const Temperature = ({ weather }) => {

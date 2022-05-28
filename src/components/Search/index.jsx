@@ -6,17 +6,21 @@ import { UseAppContext } from "../../hooks/AppContextProvider";
 import { Container, Details } from "./styles";
 
 const Search = () => {
-  const { city } = UseAppContext;
+  const { city, setCity } = UseAppContext();
 
-  const [inputValue, setInputValue] = React.useState(
-    `${city?.nome - city?.uf.nome}`
+  const [inputValue, setInputValue] = React.useState(() =>
+    city?.nome ? `${city?.nome} - ${city?.uf.nome}` : ""
   );
   const [listSearch, setListSearch] = React.useState([]);
 
   React.useEffect(() => {
     const filterSearch = filter(inputValue);
 
-    setListSearch(filterSearch);
+    if (city.nome) {
+      setListSearch([]);
+    } else {
+      setListSearch(filterSearch);
+    }
   }, [inputValue]);
 
   return (
@@ -34,7 +38,9 @@ const Search = () => {
             <li
               key={i}
               onClick={() => {
-                console.log(item);
+                setCity(item);
+                setListSearch([]);
+                setInputValue(`${item.nome} - ${item.uf.nome}`);
               }}
             >
               {item.nome} - {item.uf.nome}

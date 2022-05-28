@@ -11,11 +11,15 @@ import Loading from "../../components/Loading";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Today = () => {
+  const { city } = UseAppContext();
   const [weatherToday, setWeatherToday] = React.useState();
 
-  const { setCity } = UseAppContext;
+  const getSearchWeatherToday = async () => {
+    const { data } = await GetWeatherToday(city?.latitude, city?.longitude);
+    setWeatherToday(bolerplate(data));
+  };
 
-  React.useEffect(() => {
+  const getWeatherToday = async () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { data } = await GetWeatherToday(
@@ -24,11 +28,21 @@ const Today = () => {
         );
 
         setWeatherToday(bolerplate(data));
-
-        console.log(data);
       });
     }
+  };
+
+  React.useEffect(() => {
+    if (city?.nome) {
+      getSearchWeatherToday();
+    } else {
+      getWeatherToday();
+    }
   }, []);
+
+  React.useEffect(() => {
+    getSearchWeatherToday();
+  }, [city]);
 
   return (
     <Wrapper>
