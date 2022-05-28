@@ -14,7 +14,7 @@ const Week = () => {
   const [weatherWeek, setWeatherWeek] = React.useState();
   const { city } = UseAppContext();
 
-  const getWeatherWeek = async () => {
+  const getWeatherWeek = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { data } = await GetWeatherWeek(
@@ -38,10 +38,6 @@ const Week = () => {
     } else {
       getWeatherWeek();
     }
-  }, []);
-
-  React.useEffect(() => {
-    getSearchWeatherWeek();
   }, [city]);
 
   return (

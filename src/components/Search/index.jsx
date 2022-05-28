@@ -16,7 +16,7 @@ const Search = () => {
   React.useEffect(() => {
     const filterSearch = filter(inputValue);
 
-    if (city.nome) {
+    if (city?.nome) {
       setListSearch([]);
     } else {
       setListSearch(filterSearch);

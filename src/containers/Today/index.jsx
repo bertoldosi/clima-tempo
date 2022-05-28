@@ -14,12 +14,7 @@ const Today = () => {
   const { city } = UseAppContext();
   const [weatherToday, setWeatherToday] = React.useState();
 
-  const getSearchWeatherToday = async () => {
-    const { data } = await GetWeatherToday(city?.latitude, city?.longitude);
-    setWeatherToday(bolerplate(data));
-  };
-
-  const getWeatherToday = async () => {
+  const getWeatherToday = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { data } = await GetWeatherToday(
@@ -32,16 +27,17 @@ const Today = () => {
     }
   };
 
+  const getSearchWeatherToday = async () => {
+    const { data } = await GetWeatherToday(city?.latitude, city?.longitude);
+    setWeatherToday(bolerplate(data));
+  };
+
   React.useEffect(() => {
     if (city?.nome) {
       getSearchWeatherToday();
     } else {
       getWeatherToday();
     }
-  }, []);
-
-  React.useEffect(() => {
-    getSearchWeatherToday();
   }, [city]);
 
   return (
