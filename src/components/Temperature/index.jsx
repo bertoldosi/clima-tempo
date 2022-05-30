@@ -1,7 +1,7 @@
 import React from "react";
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
 import Loading from "../Loading";
-import Message from "../Message";
+import Greeting from "../Greeting";
 
 import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
@@ -34,7 +34,7 @@ const Temperature = ({ weather, isResponse }) => {
           <p>{weather.textWeather}</p>
         </Weather>
       </Container>
-      <Message date={weather.date} />
+      <Greeting date={weather.date} />
     </main>
   ) : (
     <Loading width={150} height={150} />
