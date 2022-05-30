@@ -1,9 +1,10 @@
 import React from "react";
+
+import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
+
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
 import Loading from "../Loading";
 import Greeting from "../Greeting";
-
-import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
 const Temperature = ({ weather, isResponse }) => {
   return isResponse ? (

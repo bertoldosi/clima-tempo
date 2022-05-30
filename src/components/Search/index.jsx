@@ -1,19 +1,18 @@
 import React from "react";
-import { FiSearch } from "react-icons/fi";
-import { filter } from "../../helpers/filter";
-import { formatStringAddressWriting } from "../../helpers/formatStringAddressWriting";
-import { UseAppContext } from "../../hooks/AppContextProvider";
 
 import { Container, Details } from "./styles";
+
+import { FiSearch } from "react-icons/fi";
+import { formatStringAddressWriting, filter } from "../../helpers";
+import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Search = () => {
   const { city, setCity } = UseAppContext();
 
+  const [listSearch, setListSearch] = React.useState([]);
   const [inputValue, setInputValue] = React.useState(
     formatStringAddressWriting(city)
   );
-
-  const [listSearch, setListSearch] = React.useState([]);
 
   React.useEffect(() => {
     const filterSearch = filter(inputValue);
@@ -35,18 +34,22 @@ const Search = () => {
           }}
         />
         <ul>
-          {listSearch.map((item, i) => (
-            <li
-              key={i}
-              onClick={() => {
-                setCity(item);
-                setListSearch([]);
-                setInputValue(`${item.nome} - ${item.uf.nome}`);
-              }}
-            >
-              {item.nome} - {item.uf.nome}
-            </li>
-          ))}
+          {listSearch.map((item, i) => {
+            const displayNameCity = formatStringAddressWriting(item);
+
+            return (
+              <li
+                key={i}
+                onClick={() => {
+                  setCity(item);
+                  setListSearch([]);
+                  setInputValue(displayNameCity);
+                }}
+              >
+                {displayNameCity}
+              </li>
+            );
+          })}
         </ul>
       </Details>
       <FiSearch />

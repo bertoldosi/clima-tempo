@@ -16,20 +16,6 @@ export const Container = styled.div`
     font-weight: 100;
   }
 
-  p {
-    max-width: 45rem;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    font-style: oblique;
-
-    cite {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-  }
-
   h4 {
     font-size: 1.5rem;
   }
