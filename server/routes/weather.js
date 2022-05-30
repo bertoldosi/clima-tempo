@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const api = require("../utils/axios-instances-external");
+const { apiWeather, apiGeo } = require("../utils/axios-instances-external");
 const router = express.Router();
 
 const APPID = process.env.REACT_APP_APPID;
@@ -369,7 +369,7 @@ router.get("/today", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await api.get("/onecall", {
+    const response = await apiWeather.get("/onecall", {
       params: {
         lat,
         lon,
@@ -394,7 +394,7 @@ router.get("/tomorrow", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await api.get("/onecall", {
+    const response = await apiWeather.get("/onecall", {
       params: {
         lat,
         lon,
@@ -413,7 +413,7 @@ router.get("/week", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await api.get("/onecall", {
+    const response = await apiWeather.get("/onecall", {
       params: {
         lat,
         lon,
@@ -424,6 +424,34 @@ router.get("/week", async (req, res) => {
 
     // res.status(200).send(mock);
     res.status(200).send(response.data.daily);
+  } catch (error) {
+    res.status(error.response.status).send(error);
+  }
+});
+
+router.get("/city", async (req, res) => {
+  const { lat, lon } = req.query;
+
+  try {
+    const response = await apiGeo.get("/reverse", {
+      params: {
+        lat,
+        lon,
+        appid: APPID,
+      },
+    });
+
+    const city = {
+      nome: response.data[0].name,
+      latitude: response.data[0].lat,
+      longitude: response.data[0].lon,
+      uf: {
+        uf: response.data[0].state,
+        nome: response.data[0].state,
+      },
+    };
+
+    res.status(200).send(city);
   } catch (error) {
     res.status(error.response.status).send(error);
   }

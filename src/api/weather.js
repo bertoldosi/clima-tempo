@@ -17,3 +17,9 @@ export const GetWeatherWeek = async (lat, lon) => {
 
   return apiGateway.get("/weather/week", { params });
 };
+
+export const GetWeatherCity = async (lat, lon) => {
+  const params = { lat, lon };
+
+  return apiGateway.get("/weather/city", { params });
+};

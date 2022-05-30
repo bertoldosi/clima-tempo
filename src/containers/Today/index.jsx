@@ -4,12 +4,12 @@ import Wrapper from "../../components/Wrapper";
 import Search from "../../components/Search";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
-import { GetWeatherToday } from "../../api/weather";
+import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Today = () => {
-  const { city } = UseAppContext();
+  const { city, setCity } = UseAppContext();
   const [weatherToday, setWeatherToday] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
 
@@ -22,6 +22,13 @@ const Today = () => {
           position.coords.latitude,
           position.coords.longitude
         );
+
+        const city = await GetWeatherCity(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
+        setCity(city.data);
 
         setWeatherToday(bolerplate(data));
         setIsResponse(true);
