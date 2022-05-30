@@ -7,12 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 5rem;
 
-  h1 {
-    font-size: 5rem;
-    font-weight: 100;
-    font-family: ${(props) => props.theme.textFontFamilyTime};
-  }
-
   h2 {
     font-size: 1.5rem;
   }

@@ -12,9 +12,12 @@ import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Week = () => {
   const [weatherWeek, setWeatherWeek] = React.useState();
+  const [isResponse, setIsResponse] = React.useState(false);
   const { city } = UseAppContext();
 
   const getWeatherWeek = () => {
+    setIsResponse(false);
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { data } = await GetWeatherWeek(
@@ -23,13 +26,17 @@ const Week = () => {
         );
 
         setWeatherWeek(bolerplate(data));
+        setIsResponse(true);
       });
     }
   };
 
   const getSearchWeatherWeek = async () => {
+    setIsResponse(false);
+
     const { data } = await GetWeatherWeek(city?.latitude, city?.longitude);
     setWeatherWeek(bolerplate(data));
+    setIsResponse(true);
   };
 
   React.useEffect(() => {
@@ -44,11 +51,7 @@ const Week = () => {
     <Wrapper>
       <Search />
       <HeaderToggle />
-      {weatherWeek ? (
-        <List listWeather={weatherWeek} />
-      ) : (
-        <Loading width={150} height={150} />
-      )}
+      <List listWeather={weatherWeek} isResponse={isResponse} />
     </Wrapper>
   );
 };

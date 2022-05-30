@@ -1,38 +1,43 @@
 import React from "react";
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
+import Loading from "../Loading";
+import Message from "../Message";
 
 import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
-const Temperature = ({ weather }) => {
-  const { tempDay, tempNight, temp, sensation, textWeather, icon } = weather;
+const Temperature = ({ weather, isResponse }) => {
+  return isResponse ? (
+    <main>
+      <Container>
+        <Temp>
+          <MaxMin>
+            <strong>
+              {weather.temp}
+              <p>°c</p>
+            </strong>
+            <span>
+              Dia {weather.tempDay}°
+              <VscArrowSmallUp />
+            </span>
 
-  return (
-    <Container>
-      <Temp>
-        <MaxMin>
-          <strong>
-            {temp}
-            <p>°c</p>
-          </strong>
-          <span>
-            Dia {tempDay}°
-            <VscArrowSmallUp />
-          </span>
+            <span>
+              Noite {weather.tempNight}°
+              <VscArrowSmallDown />
+            </span>
+          </MaxMin>
 
-          <span>
-            Noite {tempNight}°
-            <VscArrowSmallDown />
-          </span>
-        </MaxMin>
+          <span>Sensação {weather.sensation}°</span>
+        </Temp>
+        <Weather>
+          {weather.icon}
 
-        <span>Sensação {sensation}°</span>
-      </Temp>
-      <Weather>
-        {icon}
-
-        <p>{textWeather}</p>
-      </Weather>
-    </Container>
+          <p>{weather.textWeather}</p>
+        </Weather>
+      </Container>
+      <Message date={weather.date} />
+    </main>
+  ) : (
+    <Loading width={150} height={150} />
   );
 };
 

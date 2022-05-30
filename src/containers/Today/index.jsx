@@ -2,19 +2,20 @@ import React from "react";
 
 import Wrapper from "../../components/Wrapper";
 import Search from "../../components/Search";
-import Message from "../../components/Message";
 import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
 import { GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
-import Loading from "../../components/Loading";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 
 const Today = () => {
   const { city } = UseAppContext();
   const [weatherToday, setWeatherToday] = React.useState();
+  const [isResponse, setIsResponse] = React.useState(false);
 
   const getWeatherToday = () => {
+    setIsResponse(false);
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { data } = await GetWeatherToday(
@@ -23,13 +24,17 @@ const Today = () => {
         );
 
         setWeatherToday(bolerplate(data));
+        setIsResponse(true);
       });
     }
   };
 
   const getSearchWeatherToday = async () => {
+    setIsResponse(false);
+
     const { data } = await GetWeatherToday(city?.latitude, city?.longitude);
     setWeatherToday(bolerplate(data));
+    setIsResponse(true);
   };
 
   React.useEffect(() => {
@@ -44,14 +49,7 @@ const Today = () => {
     <Wrapper>
       <Search />
       <HeaderToggle />
-      {weatherToday ? (
-        <>
-          <Temperature weather={weatherToday} />
-          <Message date={weatherToday.date} />
-        </>
-      ) : (
-        <Loading width={150} height={150} />
-      )}
+      <Temperature weather={weatherToday} isResponse={isResponse} />
     </Wrapper>
   );
 };

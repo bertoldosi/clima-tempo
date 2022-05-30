@@ -5,7 +5,6 @@ import { Container } from "./styles";
 const Message = ({ date }) => {
   return (
     <Container>
-      {/* <h1>00:00:00</h1> */}
       <h2>{date}</h2>
       <h3>Rio Branco - AC</h3>
       <p>

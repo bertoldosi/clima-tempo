@@ -8,26 +8,25 @@ import { Container, Details } from "./styles";
 const Search = () => {
   const { city, setCity } = UseAppContext();
 
-  const [inputValue, setInputValue] = React.useState(() =>
-    city?.nome ? `${city?.nome} - ${city?.uf.nome}` : ""
-  );
+  const [inputValue, setInputValue] = React.useState(() => {
+    const valueFormattedSearch = `${city?.nome} - ${city?.uf.nome}`;
+    const valueSearch = city?.nome ? valueFormattedSearch : "";
+
+    return valueSearch;
+  });
+
   const [listSearch, setListSearch] = React.useState([]);
 
   React.useEffect(() => {
     const filterSearch = filter(inputValue);
-
-    if (city?.nome) {
-      setListSearch([]);
-    } else {
-      setListSearch(filterSearch);
-    }
+    setListSearch(filterSearch);
   }, [inputValue]);
 
   return (
     <Container>
       <Details>
         <input
-          placeholder="Veja o tempo da sua cidade"
+          placeholder="Veja o clima da sua cidade preferida"
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);

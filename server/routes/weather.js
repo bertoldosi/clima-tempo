@@ -378,8 +378,13 @@ router.get("/today", async (req, res) => {
       },
     });
 
+    const data = {
+      daily: response.data.daily[0],
+      current: response.data.current,
+    };
+
     // res.status(200).send(mockToday);
-    res.status(200).send(response.data.daily[0]);
+    res.status(200).send(data);
   } catch (error) {
     res.status(error.response.status).send(error);
   }
