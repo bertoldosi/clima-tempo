@@ -27,7 +27,6 @@ export const Temperature = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
 
     > span {
       margin-bottom: 0.5rem;

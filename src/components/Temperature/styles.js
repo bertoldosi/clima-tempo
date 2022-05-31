@@ -46,6 +46,7 @@ export const Weather = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 2rem;
 
   img {
     width: 15rem;
