@@ -27,7 +27,7 @@ const Search = () => {
     <Container>
       <Details>
         <input
-          placeholder="Veja o clima da sua cidade preferida"
+          placeholder="Ex: Rio branco - Acre"
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value);
