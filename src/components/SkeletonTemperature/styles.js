@@ -27,10 +27,7 @@ export const Temperature = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    > span {
-      margin-bottom: 0.5rem;
-    }
+    margin-bottom: 0.5rem;
   }
 `;
 
