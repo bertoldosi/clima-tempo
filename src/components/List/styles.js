@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   padding-bottom: 1rem;
   border-bottom: 1px solid ${(props) => props.theme.textColorPrimary};
+  margin-top: 6rem;
 
   & + & {
     margin-top: 2rem;

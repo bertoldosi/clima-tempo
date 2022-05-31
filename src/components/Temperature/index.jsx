@@ -4,6 +4,7 @@ import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
 import Loading from "../Loading";
+import SkeletonTemperature from "../../components/SkeletonTemperature";
 import Greeting from "../Greeting";
 
 const Temperature = ({ weather, isResponse }) => {
@@ -38,7 +39,7 @@ const Temperature = ({ weather, isResponse }) => {
       <Greeting date={weather.date} />
     </main>
   ) : (
-    <Loading width={150} height={150} />
+    <SkeletonTemperature />
   );
 };
 

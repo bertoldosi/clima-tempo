@@ -1,7 +1,8 @@
 import React from "react";
-import Loading from "../Loading";
 
 import { Container, Day, Weather } from "./styles";
+
+import SkeletonList from "../SkeletonList";
 
 const List = ({ listWeather, isResponse }) => {
   return isResponse ? (
@@ -22,7 +23,7 @@ const List = ({ listWeather, isResponse }) => {
       </Container>
     ))
   ) : (
-    <Loading width={150} height={150} />
+    <SkeletonList />
   );
 };
 
