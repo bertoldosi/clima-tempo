@@ -7,22 +7,25 @@ import Temperature from "../../components/Temperature";
 import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
+import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
+import { messageErrorCurrentLocation } from "../../constants";
 
 const Today = () => {
+  const [validationCurrentPosition] = useValidationCurrentPosition();
   const { city, setCity } = UseAppContext();
   const [weatherToday, setWeatherToday] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
 
-  const getWeatherToday = () => {
+  const getWeatherToday = async () => {
     setIsResponse(false);
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
+    validationCurrentPosition()
+      .then(async (position) => {
         const { data } = await GetWeatherToday(
           position.coords.latitude,
           position.coords.longitude
         );
-
+        validationCurrentPosition;
         const city = await GetWeatherCity(
           position.coords.latitude,
           position.coords.longitude
@@ -32,8 +35,10 @@ const Today = () => {
 
         setWeatherToday(bolerplate(data));
         setIsResponse(true);
+      })
+      .catch(() => {
+        alert(messageErrorCurrentLocation);
       });
-    }
   };
 
   const getSearchWeatherToday = async () => {

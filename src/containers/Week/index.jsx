@@ -9,8 +9,11 @@ import Loading from "../../components/Loading";
 import { GetWeatherWeek } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
+import { messageErrorCurrentLocation } from "../../constants";
+import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
 
 const Week = () => {
+  const [validationCurrentPosition] = useValidationCurrentPosition();
   const [weatherWeek, setWeatherWeek] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
   const { city } = UseAppContext();
@@ -18,8 +21,8 @@ const Week = () => {
   const getWeatherWeek = () => {
     setIsResponse(false);
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
+    validationCurrentPosition()
+      .then(async (position) => {
         const { data } = await GetWeatherWeek(
           position.coords.latitude,
           position.coords.longitude
@@ -27,8 +30,10 @@ const Week = () => {
 
         setWeatherWeek(bolerplate(data));
         setIsResponse(true);
+      })
+      .catch(() => {
+        alert(messageErrorCurrentLocation);
       });
-    }
   };
 
   const getSearchWeatherWeek = async () => {
