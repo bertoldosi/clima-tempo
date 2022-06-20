@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 
 let hour = new Date().getHours();
-const isNigth = hour >= 6;
+const isNigth = hour >= 18;
 
 const common = {
   backgroundColorWhite: "white",
