@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "node server/routes/index.js & next dev",
-    "start": "node server/routes/index.js & next start"
+    "start": "node server/routes/index.js & next start",
+    "vercel-build": "npm run prepare && next build"
   },
   "dependencies": {
     "axios": "^0.27.2",
