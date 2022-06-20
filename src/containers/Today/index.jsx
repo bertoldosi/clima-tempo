@@ -25,7 +25,7 @@ const Today = () => {
           position.coords.latitude,
           position.coords.longitude
         );
-        validationCurrentPosition;
+
         const city = await GetWeatherCity(
           position.coords.latitude,
           position.coords.longitude
