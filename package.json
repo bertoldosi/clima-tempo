@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "node server/routes/index.js & next dev",
+    "build": "next build",
     "start": "node server/routes/index.js & next start",
     "vercel-build": "npm run prepare && next build"
   },
