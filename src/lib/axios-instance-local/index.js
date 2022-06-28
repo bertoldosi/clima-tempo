@@ -1,11 +1,12 @@
 import axios from "axios";
-import getConfig from "next/config";
 
-const { publicRuntimeConfig = {} } = getConfig() || {};
-const BASE_URL = publicRuntimeConfig.BASE_URL;
+const isDevelopment = process.env.NODE_ENV === "development";
+const BASE_URL = isDevelopment
+  ? "http://localhost:3333"
+  : "https://screen-clima-tempo.herokuapp.com/";
 
 const instances = axios.create({
-  baseURL: BASE_URL,
+  baseURL: "http://localhost:3333",
 });
 
 export default instances;
