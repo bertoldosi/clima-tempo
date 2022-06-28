@@ -1,0 +1,39 @@
+{
+  "dt": 1656514800,
+  "sunrise": 1656497950,
+  "sunset": 1656536109,
+  "moonrise": 1656499800,
+  "moonset": 1656537660,
+  "moon_phase": 0.02,
+  "temp": {
+    "day": 289.31,
+    "min": 282.34,
+    "max": 291.13,
+    "night": 282.34,
+    "eve": 285.07,
+    "morn": 285.16
+  },
+  "feels_like": {
+    "day": 288.57,
+    "night": 281.96,
+    "eve": 284.43,
+    "morn": 284.9
+  },
+  "pressure": 1019,
+  "humidity": 61,
+  "dew_point": 282.16,
+  "wind_speed": 3.84,
+  "wind_deg": 202,
+  "wind_gust": 8.1,
+  "weather": [
+    {
+      "id": 802,
+      "main": "Clouds",
+      "description": "nuvens dispersas",
+      "icon": "03d"
+    }
+  ],
+  "clouds": 30,
+  "pop": 0.03,
+  "uvi": 4.79
+}
