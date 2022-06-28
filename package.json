@@ -3,8 +3,7 @@
   "scripts": {
     "dev": "node server/routes/index.js & next dev",
     "build": "next build",
-    "start-client": "next start",
-    "start-server": "node server/routes/index.js",
+    "start": "next start",
     "vercel-build": "npm run prepare && next build"
   },
   "dependencies": {
