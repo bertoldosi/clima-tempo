@@ -8,6 +8,7 @@ export const Container = styled.div`
   border-radius: 0.3rem;
   background: ${(props) => props.theme.backgroundColorWhite};
   position: relative;
+  margin-top: 2rem;
 
   svg {
     font-size: 2rem;

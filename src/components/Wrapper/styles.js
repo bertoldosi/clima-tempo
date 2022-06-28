@@ -1,10 +1,26 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  max-width: 50rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow: auto;
-  margin: 0 auto;
-  padding-bottom: 5rem;
+
+  main {
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto;
+    flex: 1;
+  }
+
+  footer {
+    width: 100%;
+    min-height: 4rem;
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+  }
 `;

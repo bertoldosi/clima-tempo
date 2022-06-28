@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin-top: 3rem;
+`;
+
+export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
   border-bottom: 1px solid ${(props) => props.theme.textColorPrimary};
-  margin-top: 6rem;
+  margin-top: 2rem;
 
   & + & {
-    margin-top: 2rem;
   }
 `;
 
