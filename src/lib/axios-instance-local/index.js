@@ -6,7 +6,7 @@ const BASE_URL = isDevelopment
   : "https://screen-clima-tempo.herokuapp.com/";
 
 const instances = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: BASE_URL,
 });
 
 export default instances;
