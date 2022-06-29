@@ -1,5 +1,5 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { Container, Content, Temperature, Greeting } from "./styles";
+import { Container, Temperature, Greeting } from "./styles";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const SkeletonTemperature = () => {
@@ -11,12 +11,12 @@ const SkeletonTemperature = () => {
         borderRadius="0.2rem"
         duration={2}
       >
-        <Content>
+        <div>
           <Temperature>
             <div>
               <Skeleton height="5rem" width="8rem" />
-              <Skeleton height=".5rem" width="13rem" />
-              <Skeleton height=".5rem" width="11rem" />
+              <Skeleton height=".7rem" width="12rem" />
+              <Skeleton height=".6rem" width="10rem" />
             </div>
 
             <div>
@@ -25,11 +25,11 @@ const SkeletonTemperature = () => {
             </div>
           </Temperature>
           <Greeting>
-            <Skeleton height=".6rem" width="13rem" />
+            <Skeleton height=".7rem" width="18rem" />
             <Skeleton height=".5rem" width="11rem" />
-            <Skeleton height=".5rem" width="10rem" />
+            <Skeleton height=".6rem" width="8rem" />
           </Greeting>
-        </Content>
+        </div>
       </SkeletonTheme>
     </Container>
   );

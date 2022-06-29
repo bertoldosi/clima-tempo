@@ -7,14 +7,10 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const Content = styled.div`
-  margin-top: 8rem;
-`;
-
 export const Temperature = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   div:nth-child(1) {
     display: flex;
@@ -35,7 +31,7 @@ export const Greeting = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8rem;
+  margin-top: 11rem;
 
   span:nth-child(3) {
     margin-top: 4rem;
