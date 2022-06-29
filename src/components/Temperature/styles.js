@@ -15,13 +15,9 @@ export const Temperature = styled.div`
     text-align: end;
     font-size: 5rem;
     line-height: 5rem;
-    position: relative;
 
     p {
-      top: -1rem;
-      left: 6rem;
-      position: absolute;
-      font-size: 3.5rem;
+      font-size: 4rem;
     }
   }
 
