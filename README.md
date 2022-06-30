@@ -28,7 +28,7 @@ Uma aplicação desenvolvida em framework Nextjs, no qual é possível verificar
 
 ---
 
-## 🚀 Tecnologias Utilizadas:
+## 🚀 Tecnologias e Libs Utilizadas:
 
 - HTML
 - CSS
