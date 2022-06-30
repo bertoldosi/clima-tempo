@@ -5,7 +5,6 @@ import Wrapper from "../../components/Wrapper";
 import HeaderToggle from "../../components/HeaderToggle";
 import List from "../../components/List";
 
-import Loading from "../../components/Loading";
 import { GetWeatherWeek } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
