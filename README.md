@@ -3,12 +3,12 @@
 ### Web
 
 <p align="center">
-  <img alt="Web Preview" title="Web-preview" src="https://user-images.githubusercontent.com/42129177/92681975-c0def280-f2f4-11ea-9c3b-9c2775af7520.gif" width="800px">
+  <img alt="Web Preview" title="Web-preview" src="https://user-images.githubusercontent.com/42129177/176744194-a73d5138-208e-4349-b15e-8e89fda7a9db.png" width="800px">
 
 ### Mobile
 
 <p align="center">
-  <img alt="Web Preview" title="Web-preview" src="https://user-images.githubusercontent.com/42129177/92683764-5aa89e80-f2f9-11ea-8007-00a066102453.gif" width="300px"">
+  <img alt="Web Preview" title="Web-preview" src="https://user-images.githubusercontent.com/42129177/176745001-11818801-7581-4533-8630-fd3c6a181d1a.png" width="300px"">
   
 </p>
 
@@ -51,7 +51,7 @@ Openweathermap: `https://home.openweathermap.org`
 
 ---
 
-## ⌨ Como gerar suas keys do Projeto:
+## ⌨ Rodando o projeto localmente:
 
 ```bash
 
