@@ -14,7 +14,7 @@ const Temperature = ({ weather, isResponse }) => {
         <Temp>
           <MaxMin>
             <strong>
-              {weather.temp}
+              <p>{weather.temp}</p>
               <p>°c</p>
             </strong>
             <span>
