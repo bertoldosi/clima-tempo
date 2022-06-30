@@ -8,7 +8,7 @@ const Wrapper = ({ children }) => {
       <main>{children}</main>
       <footer>
         <p>
-          <span>© 2023 por Matheus Bertoldo&nbsp;</span>
+          <span>© 2022 por Matheus Bertoldo</span>
         </p>
       </footer>
     </Container>
