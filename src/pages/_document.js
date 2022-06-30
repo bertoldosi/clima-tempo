@@ -4,14 +4,6 @@ function MyDocument() {
   return (
     <Html>
       <Head>
-        <title>Clima Tempo || Bertoldo</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link
-          rel="icon"
-          type="image/jpg"
-          href="https://cdn-icons-png.flaticon.com/512/1821/1821978.png"
-        />
-
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
