@@ -55,6 +55,20 @@ Openweathermap: `https://home.openweathermap.org`
 
 ```bash
 
+# Baixe o repositório na barra superior a direita
+
+ou
+
+# Clonar o repositório
+git clone https://github.com/bertoldosi/clima-tempo
+
+# Entre no diretório e acesse com seu Editor de texto preferido
+cd clima-tempo
+
+```
+
+```bash
+
 # Pegando chave na api Rapidapi
 - Crie uma conta gratuitamente
 - Acesse o link https://rapidapi.com/developer/apps
@@ -75,16 +89,6 @@ Ex: REACT_APP_APPID=Sua Key
 ```
 
 ```bash
-
-# Baixe o repositório na barra superior a direita
-
-ou
-
-# Clonar o repositório
-git clone https://github.com/bertoldosi/clima-tempo
-
-# Entre no diretório e acesse com seu Editor de texto preferido
-cd clima-tempo
 
 # Baixar as dependências
 npm i
