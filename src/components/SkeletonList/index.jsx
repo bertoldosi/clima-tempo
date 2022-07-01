@@ -1,3 +1,4 @@
+import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Container, Content, Temperature, Weather } from "./styles";
 import "react-loading-skeleton/dist/skeleton.css";

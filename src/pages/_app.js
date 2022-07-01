@@ -1,3 +1,4 @@
+import React from "react";
 import GlobalStyle from "../styles/global";
 import Theme from "../styles/theme";
 import { AppContextProvider } from "../hooks/AppContextProvider";

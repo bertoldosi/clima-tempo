@@ -1,3 +1,4 @@
+import React from "react";
 import Today from "../containers/Today";
 import Tomorrow from "../containers/Tomorrow";
 import Week from "../containers/Week";
