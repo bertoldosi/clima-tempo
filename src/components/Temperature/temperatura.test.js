@@ -28,6 +28,6 @@ describe("Temperatura", () => {
 
     screen.debug();
 
-    // expect(container).toMatchSnapshot();
+    
   });
 });
