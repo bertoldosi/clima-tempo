@@ -7,6 +7,7 @@ const BASE_URL = BASE_URL_PROD || BASE_URL_DEV;
 
 const instances = axios.create({
   baseURL: BASE_URL,
+  timeout: 10000,
 });
 
 export default instances;

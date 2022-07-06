@@ -4,6 +4,7 @@ const APPID = process.env.APPID;
 
 const service = axios.create({
   baseURL: "https://api-gateway-clima-tempo.herokuapp.com/",
+  timeout: 10000,
   params: {
     appid: APPID,
   },
