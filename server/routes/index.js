@@ -14,7 +14,6 @@ app.use(cors());
 const APPID = process.env.APPID;
 
 if (APPID) {
-  console.log("prod", APPID);
   require("./weather")(app);
 } else {
   require("./mocks/weather")(app);
