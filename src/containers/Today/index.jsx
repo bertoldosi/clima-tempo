@@ -8,7 +8,9 @@ import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
-import { messageErrorCurrentLocation } from "../../constants";
+import { errorResponse } from "../../helpers/errorResponse";
+import { toast } from "react-toastify";
+import ErrorMessage from "../../components/ErrorMessage";
 
 const Today = () => {
   const [validationCurrentPosition] = useValidationCurrentPosition();
@@ -36,17 +38,23 @@ const Today = () => {
         setWeatherToday(bolerplate(data));
         setIsResponse(true);
       })
-      .catch(() => {
-        alert(messageErrorCurrentLocation);
+      .catch((error) => {
+        const erroData = errorResponse(error);
+        toast.error(<ErrorMessage text={erroData.message} />);
       });
   };
 
   const getSearchWeatherToday = async () => {
     setIsResponse(false);
 
-    const { data } = await GetWeatherToday(city?.latitude, city?.longitude);
-    setWeatherToday(bolerplate(data));
-    setIsResponse(true);
+    try {
+      const { data } = await GetWeatherToday(city?.latitude, city?.longitude);
+      setWeatherToday(bolerplate(data));
+      setIsResponse(true);
+    } catch (error) {
+      const erroData = errorResponse(error);
+      toast.error(<ErrorMessage text={erroData.message} />);
+    }
   };
 
   React.useEffect(() => {

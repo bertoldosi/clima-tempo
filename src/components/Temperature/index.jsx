@@ -3,7 +3,6 @@ import React from "react";
 import { Container, Temperature as Temp, Weather, MaxMin } from "./styles";
 
 import { VscArrowSmallDown, VscArrowSmallUp } from "react-icons/vsc";
-import Loading from "../Loading";
 import SkeletonTemperature from "../../components/SkeletonTemperature";
 import Greeting from "../Greeting";
 

@@ -5,6 +5,6 @@ module.exports = {
     styledComponents: true,
   },
   env: {
-    API_SCREEN: process.env.API_SCREEN,
+    APPID: process.env.APPID,
   },
 };
