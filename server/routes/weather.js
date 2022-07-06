@@ -1,15 +1,15 @@
 require("dotenv").config();
 const express = require("express");
-const { apiWeather, apiGeo } = require("../utils/axios-instances-external");
+const service = require("../utils/axios-instances-external");
 const router = express.Router();
 
-const APPID = process.env.REACT_APP_APPID;
+const APPID = process.env.APPID;
 
 router.get("/today", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await apiWeather.get("/onecall", {
+    const response = await service.get("/onecall", {
       params: {
         lat,
         lon,
@@ -33,7 +33,7 @@ router.get("/tomorrow", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await apiWeather.get("/onecall", {
+    const response = await service.get("/onecall", {
       params: {
         lat,
         lon,
@@ -52,7 +52,7 @@ router.get("/week", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await apiWeather.get("/onecall", {
+    const response = await service.get("/onecall", {
       params: {
         lat,
         lon,
@@ -71,7 +71,7 @@ router.get("/city", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await apiGeo.get("/reverse", {
+    const response = await service.get("/reverse", {
       params: {
         lat,
         lon,

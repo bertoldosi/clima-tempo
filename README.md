@@ -84,7 +84,7 @@ Ex: REACT_APP_RAPIDAPI_KEY=Sua Application Key
 - Copie sua Key
 - Cole Key no arquivo .env
 
-Ex: REACT_APP_APPID=Sua Key
+Ex: APPID=Sua Key
 
 ```
 

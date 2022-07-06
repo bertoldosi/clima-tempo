@@ -2,10 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 
-const mockToday = require("../today.json");
-const mockTomorrow = require("../tomorrow.json");
-const mockWeek = require("../week.json");
-const mockCity = require("../city.json");
+const mockToday = require("./today.json");
+const mockTomorrow = require("./tomorrow.json");
+const mockWeek = require("./week.json");
+const mockCity = require("./city.json");
 
 router.get("/today", async (req, res) => {
   res.status(200).send(mockToday);
