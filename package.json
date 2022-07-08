@@ -3,7 +3,7 @@
   "scripts": {
     "test:dev": "jest",
     "start:server": "node server",
-    "dev": "start:server & next dev",
+    "dev": "npm run start:server & next dev",
     "build": "next build",
     "start": "next start",
     "vercel-build": "npm run prepare && next build"
