@@ -5,20 +5,19 @@ const helmet = require("helmet");
 const cors = require("cors");
 
 const app = express();
+const port = 3001;
+const config = {
+  origin: "*",
+};
+const corsInstance = cors(config);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors());
+app.use(corsInstance);
 
-const APPID = process.env.APPID;
+require("./routes/weather")(app);
 
-if (APPID) {
-  require("./weather")(app);
-} else {
-  require("./mocks/weather")(app);
-}
-
-require("./weather")(app);
-
-app.listen(3333);
+app.listen(port, () => {
+  console.log("Server start!, port:", port);
+});

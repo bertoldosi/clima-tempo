@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "test:dev": "jest",
-    "dev": "node server/routes/index.js & next dev",
     "build": "next build",
-    "start": "next start",
+    "test:dev": "jest",
+    "start:server": "node server",
+    "dev": "npm run start:server & next dev",
+    "start": "npm run start:server & next start",
     "vercel-build": "npm run prepare && next build"
   },
   "dependencies": {
