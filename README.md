@@ -101,7 +101,7 @@ Feito isso, abra o seu navegador e acesse `http://localhost:3000/`
 
 ---
 
-Para acessar a aplicação hospedada clique em: https://clima-tempo-seven.vercel.app/
+Para acessar a aplicação hospedada clique em: https://bertoldo-weather-forecast.herokuapp.com/
 
 ---
 
