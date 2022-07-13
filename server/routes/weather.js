@@ -5,6 +5,10 @@ const router = express.Router();
 
 const APPID = process.env.APPID;
 
+router.get("/", async (req, res) => {
+  res.status(200).send("Hello weather!");
+});
+
 router.get("/today", async (req, res) => {
   const { lat, lon } = req.query;
 
