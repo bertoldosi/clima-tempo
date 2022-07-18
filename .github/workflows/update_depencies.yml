@@ -13,8 +13,6 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
 
-          npm install -g npm-check-updates
-          ncu -u
           npm install
 
           git add .
