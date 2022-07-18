@@ -34,5 +34,4 @@ jobs:
             automated pr
           assignees: bertoldosi
           reviewers: bertoldosi
-          milestone: 1
           draft: false
