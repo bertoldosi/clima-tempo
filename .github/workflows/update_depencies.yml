@@ -11,8 +11,8 @@ jobs:
 
       - name: Make changes to pull request
         run: |
-          git config user.name 'bertoldosi'
-          git config user.email 'matheus.bertoldosi.github.com'
+          git config user.name bertoldosi
+          git config user.email matheus.bertoldosi.github.com
           blabla +%s > report.txt
           git add .
           git commit -am "Modify tracked file during workflow"
