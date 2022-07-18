@@ -10,8 +10,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Create commits
         run: |
-          git config user.name 'bertoldosi'
-          git config user.email 'matheus.bertoldosi.github.com'
 
           npm install -g npm-check-updates
           ncu -u
@@ -24,9 +22,9 @@ jobs:
         with:
           commit-message: Update report
           committer: GitHub <noreply@github.com>
-          branch: example-patches
+          branch: feature/update-dependecies
           delete-branch: true
-          title: "[Example] Update report"
+          title: "[Teste] Update report"
           body: |
             Update report
             - Updated with *today's* date
