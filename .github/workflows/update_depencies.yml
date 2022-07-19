@@ -12,9 +12,7 @@ jobs:
         run: |
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
-
           npm install
-
           git add .
           git commit -am "Modify tracked file during workflow"
       - name: Create Pull Request
