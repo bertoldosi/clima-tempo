@@ -27,9 +27,10 @@ jobs:
 
       - name: Update dependencies
         run: |
-          npx -p npm-check-updates ncu -u
-          npm install
+          npm install date-fns --save
 
       - name: Create Pull Request
         run: |
-          gh pr create --title "The bug is fixed" --body "Everything works again"
+          git checkout -b update-dependencies
+          git commit -am "[ASN-000] Update Dependencies"
+          gh pr create --base master --head update-dependencies --title "The bug is fixed" --body "Everything works again"
