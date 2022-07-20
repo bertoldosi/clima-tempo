@@ -10,11 +10,18 @@ jobs:
       - name: Setup github
         uses: actions/checkout@v3
 
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.10.0"
+
       - name: Setup brew
         run: brew install hub
 
       - name: Update dependencies
-        run: nano myFile.text
+        run: |
+          npx -p npm-check-updates ncu -u
+          npm install
 
       - name: Create Pull Request
         run: |
