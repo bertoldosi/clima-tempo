@@ -1,0 +1,28 @@
+name: Check Dependencies
+on:
+  push:
+    branches: [development]
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup github
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.10.0"
+
+      - name: Update dependencies
+        run: |
+          npx -p npm-check-updates ncu -u
+          npm install
+
+      - name: Create Pull Request
+        run: |
+          git checkout -b update-dependencies
+          git commit -am "[ASN-000] Update Dependencies"
+          git push origin update-dependencies
+          git request-pull https://github.com/bertoldosi/clima-tempo update-dependencies
