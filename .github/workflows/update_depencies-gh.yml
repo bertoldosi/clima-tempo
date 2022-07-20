@@ -23,17 +23,11 @@ jobs:
           sudo apt update
           sudo apt install gh
 
-      # - name: Update dependencies
-      #   run: |
-      #     npx -p npm-check-updates ncu -u
-      #     npm install
+      - name: Update dependencies
+        run: |
+          npx -p npm-check-updates ncu -u
+          npm install
 
-      # - name: Create Pull Request
-      #   run: |
-      #     git config --global user.email "${GITHUB_ACTOR}"
-      #     git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
-
-      #     git checkout -b update-dependencies
-      #     git commit -am "[ASN-000] Update Dependencies"
-
-      #     hub pull-request -b origin update-dependencies
+      - name: Create Pull Request
+        run: |
+          gh pr create --title "The bug is fixed" --body "Everything works again"
