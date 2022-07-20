@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
 
-          git checkout -b update-dependencies
+          git checkout -b update-dependencies2
           git commit -am "[ASN-000] Update Dependencies"
 
-          hub pull-request -b origin update-dependencies
+          hub pull-request -b origin update-dependencies2
