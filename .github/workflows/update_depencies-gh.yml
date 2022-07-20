@@ -4,8 +4,8 @@ on:
     branches: [development]
 
 jobs:
-  create-pull-request:
-    runs-on: macos-11
+  create-pull-request-gh:
+    runs-on: ubuntu-latest
     steps:
       - name: Setup github
         uses: actions/checkout@v3
