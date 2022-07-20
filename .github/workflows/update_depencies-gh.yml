@@ -35,7 +35,7 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}"
           git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
 
-          git checkout -b update-dependencies
-          git commit -am "[ASN-000] Update Dependencies"
-          git push origin update-dependencies
-          # gh pr create --base master --head update-dependencies --title "The bug is fixed" --body "Everything works again"
+          # git checkout -b update-dependencies
+          # git commit -am "[ASN-000] Update Dependencies"
+          # git push origin update-dependencies
+          gh pr create --base development --head update-dependencies --title "The bug is fixed" --body "Everything works again"
