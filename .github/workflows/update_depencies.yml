@@ -20,8 +20,9 @@ jobs:
 
       - name: Update dependencies
         run: |
-          npx -p npm-check-updates ncu -u
-          npm install
+          # npx -p npm-check-updates ncu -u
+          # npm install 
+          nano myFile.text
 
       - name: Create Pull Request
         run: |
