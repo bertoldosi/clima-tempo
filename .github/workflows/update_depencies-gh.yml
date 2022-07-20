@@ -6,6 +6,8 @@ on:
 jobs:
   create-pull-request-gh:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Setup github
         uses: actions/checkout@v3
