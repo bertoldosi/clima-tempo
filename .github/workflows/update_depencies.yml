@@ -28,4 +28,5 @@ jobs:
           git checkout -b update-dependencies
           git commit -am "[ASN-000] Update Dependencies"
           git push origin update-dependencies
-          git request-pull https://github.com/bertoldosi/clima-tempo update-dependencies
+          # git request-pull https://github.com/bertoldosi/clima-tempo update-dependencies
+          git request-pull -p "update-dependencies" https://github.com/bertoldosi/clima-tempo
