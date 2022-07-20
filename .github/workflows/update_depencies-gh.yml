@@ -36,4 +36,5 @@ jobs:
 
           git checkout -b update-dependencies
           git commit -am "[ASN-000] Update Dependencies"
+          git push origin update-dependencies
           gh pr create --base master --head update-dependencies --title "The bug is fixed" --body "Everything works again"
