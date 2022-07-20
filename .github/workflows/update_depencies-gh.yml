@@ -15,20 +15,25 @@ jobs:
         with:
           node-version: "16.10.0"
 
-      - name: Setup brew
-        run: brew install hub
-
-      - name: Update dependencies
+      - name: Setup gh
         run: |
-          npx -p npm-check-updates ncu -u
-          npm install
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+          sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          sudo apt update
+          sudo apt install gh
 
-      - name: Create Pull Request
-        run: |
-          git config --global user.email "${GITHUB_ACTOR}"
-          git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
+      # - name: Update dependencies
+      #   run: |
+      #     npx -p npm-check-updates ncu -u
+      #     npm install
 
-          git checkout -b update-dependencies
-          git commit -am "[ASN-000] Update Dependencies"
+      # - name: Create Pull Request
+      #   run: |
+      #     git config --global user.email "${GITHUB_ACTOR}"
+      #     git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
 
-          hub pull-request -b origin update-dependencies
+      #     git checkout -b update-dependencies
+      #     git commit -am "[ASN-000] Update Dependencies"
+
+      #     hub pull-request -b origin update-dependencies
