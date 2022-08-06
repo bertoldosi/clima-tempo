@@ -1,6 +1,5 @@
 import { kelvinToCelsius } from "../../helpers/kelvinToCelsius";
 import { formatDate } from "../../helpers/formatDate";
-import { Weathers } from "../../icons/Weathers";
 
 export const bolerplate = (data) => {
   const icon = data.current.weather[0].icon;
