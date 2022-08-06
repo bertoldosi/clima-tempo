@@ -1,8 +1,6 @@
 import React from "react";
 
-import Search from "../../components/Search";
 import Wrapper from "../../components/Wrapper";
-import HeaderToggle from "../../components/HeaderToggle";
 import List from "../../components/List";
 import { GetWeatherWeek } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
@@ -60,8 +58,6 @@ const Week = () => {
 
   return (
     <Wrapper>
-      <Search />
-      <HeaderToggle />
       <List listWeather={weatherWeek} isResponse={isResponse} />
     </Wrapper>
   );

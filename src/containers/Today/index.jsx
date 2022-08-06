@@ -1,8 +1,6 @@
 import React from "react";
 
 import Wrapper from "../../components/Wrapper";
-import Search from "../../components/Search";
-import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
 import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
@@ -67,8 +65,6 @@ const Today = () => {
 
   return (
     <Wrapper>
-      <Search />
-      <HeaderToggle />
       <Temperature weather={weatherToday} isResponse={isResponse} />
     </Wrapper>
   );
