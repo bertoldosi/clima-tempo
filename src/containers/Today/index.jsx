@@ -16,7 +16,7 @@ const Today = () => {
   const [weatherToday, setWeatherToday] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
 
-  const getWeatherToday = async () => {
+  const getWeather = async () => {
     setIsResponse(false);
 
     validationCurrentPosition()
@@ -42,7 +42,7 @@ const Today = () => {
       });
   };
 
-  const getSearchWeatherToday = async () => {
+  const searchWeather = async () => {
     setIsResponse(false);
 
     try {
@@ -57,9 +57,9 @@ const Today = () => {
 
   React.useEffect(() => {
     if (city?.nome) {
-      getSearchWeatherToday();
+      searchWeather();
     } else {
-      getWeatherToday();
+      getWeather();
     }
   }, [city]);
 

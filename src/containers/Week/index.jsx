@@ -16,7 +16,7 @@ const Week = () => {
   const [isResponse, setIsResponse] = React.useState(false);
   const { city } = UseAppContext();
 
-  const getWeatherWeek = () => {
+  const getWeather = () => {
     setIsResponse(false);
 
     validationCurrentPosition()
@@ -35,7 +35,7 @@ const Week = () => {
       });
   };
 
-  const getSearchWeatherWeek = async () => {
+  const searchWeather = async () => {
     setIsResponse(false);
 
     try {
@@ -50,9 +50,9 @@ const Week = () => {
 
   React.useEffect(() => {
     if (city?.nome) {
-      getSearchWeatherWeek();
+      searchWeather();
     } else {
-      getWeatherWeek();
+      getWeather();
     }
   }, [city]);
 
