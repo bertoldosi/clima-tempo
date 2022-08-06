@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
       <Theme>
         <GlobalStyle />
         <Head>
-          <title>Clima Tempo || Bertoldo</title>
+          <title>Clima Tempo</title>
           <link
             rel="icon"
             type="image/jpg"

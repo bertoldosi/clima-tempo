@@ -30,7 +30,7 @@ const Temperature = ({ weather, isResponse }) => {
           <span>Sensação {weather.sensation}°</span>
         </Temp>
         <Weather>
-          {weather.icon}
+          <img src={weather.iconUrl} alt="" />
 
           <p>{weather.textWeather}</p>
         </Weather>

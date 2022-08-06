@@ -15,7 +15,7 @@ const List = ({ listWeather, isResponse }) => {
           </Day>
 
           <Weather>
-            {weather.icon}
+            <img src={weather.iconUrl} alt="" />
             <span>
               <strong>{weather.temp_max}°</strong>
               <strong>{weather.temp_min}°</strong>

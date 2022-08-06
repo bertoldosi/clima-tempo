@@ -1,8 +1,6 @@
 import React from "react";
 
-import Search from "../../components/Search";
 import Wrapper from "../../components/Wrapper";
-import HeaderToggle from "../../components/HeaderToggle";
 import List from "../../components/List";
 import { GetWeatherWeek } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
@@ -18,7 +16,7 @@ const Week = () => {
   const [isResponse, setIsResponse] = React.useState(false);
   const { city } = UseAppContext();
 
-  const getWeatherWeek = () => {
+  const getWeather = () => {
     setIsResponse(false);
 
     validationCurrentPosition()
@@ -37,7 +35,7 @@ const Week = () => {
       });
   };
 
-  const getSearchWeatherWeek = async () => {
+  const searchWeather = async () => {
     setIsResponse(false);
 
     try {
@@ -52,16 +50,14 @@ const Week = () => {
 
   React.useEffect(() => {
     if (city?.nome) {
-      getSearchWeatherWeek();
+      searchWeather();
     } else {
-      getWeatherWeek();
+      getWeather();
     }
   }, [city]);
 
   return (
     <Wrapper>
-      <Search />
-      <HeaderToggle />
       <List listWeather={weatherWeek} isResponse={isResponse} />
     </Wrapper>
   );

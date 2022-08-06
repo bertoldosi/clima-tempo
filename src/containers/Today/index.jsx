@@ -1,8 +1,6 @@
 import React from "react";
 
 import Wrapper from "../../components/Wrapper";
-import Search from "../../components/Search";
-import HeaderToggle from "../../components/HeaderToggle";
 import Temperature from "../../components/Temperature";
 import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
@@ -18,7 +16,7 @@ const Today = () => {
   const [weatherToday, setWeatherToday] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
 
-  const getWeatherToday = async () => {
+  const getWeather = async () => {
     setIsResponse(false);
 
     validationCurrentPosition()
@@ -44,7 +42,7 @@ const Today = () => {
       });
   };
 
-  const getSearchWeatherToday = async () => {
+  const searchWeather = async () => {
     setIsResponse(false);
 
     try {
@@ -59,16 +57,14 @@ const Today = () => {
 
   React.useEffect(() => {
     if (city?.nome) {
-      getSearchWeatherToday();
+      searchWeather();
     } else {
-      getWeatherToday();
+      getWeather();
     }
   }, [city]);
 
   return (
     <Wrapper>
-      <Search />
-      <HeaderToggle />
       <Temperature weather={weatherToday} isResponse={isResponse} />
     </Wrapper>
   );
