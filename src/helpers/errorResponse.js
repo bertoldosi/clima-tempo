@@ -4,7 +4,6 @@ export const errorResponse = (error) => {
       code: error?.response?.data?.cod,
       message: error?.response?.data?.message,
     };
-    console.log(errorAPI);
 
     return errorAPI;
   } else {
@@ -12,7 +11,6 @@ export const errorResponse = (error) => {
       code: error?.code,
       message: error?.message,
     };
-    console.log(errorLocation);
 
     return errorLocation;
   }
