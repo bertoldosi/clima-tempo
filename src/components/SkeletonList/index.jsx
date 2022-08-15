@@ -4,7 +4,7 @@ import { Container, Content, Temperature, Weather } from "./styles";
 
 const SkeletonList = () => {
   return (
-    <Container>
+    <Container data-testid="skeleton-element">
       <SkeletonTheme
         baseColor="#c3d6ea"
         highlightColor="#96c7ff"
