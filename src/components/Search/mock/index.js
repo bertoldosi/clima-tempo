@@ -6,4 +6,5 @@ export const mockCity = {
       nome: "Paraná",
     },
   },
+  setCity: jest.fn(),
 };
