@@ -5,13 +5,13 @@ import Temperature from "../../components/Temperature";
 import { bolerplate } from "./bolerplate";
 import { GetWeatherTomorrow } from "../../api/weather";
 import { UseAppContext } from "../../hooks/AppContextProvider";
-import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
+import usePosition from "../../hooks/usePosition";
 import { errorResponse } from "../../helpers/errorResponse";
 import { toast } from "react-toastify";
 import ErrorMessage from "../../components/ErrorMessage";
 
 const Tomorrow = () => {
-  const [validationCurrentPosition] = useValidationCurrentPosition();
+  const { currentPosition } = usePosition();
 
   const [isResponse, setIsResponse] = React.useState(false);
   const [weatherTomorrow, setWeatherTomorrow] = React.useState();
@@ -20,7 +20,7 @@ const Tomorrow = () => {
   const getWeather = () => {
     setIsResponse(false);
 
-    validationCurrentPosition()
+    currentPosition()
       .then(async (position) => {
         const { data } = await GetWeatherTomorrow(
           position.coords.latitude,

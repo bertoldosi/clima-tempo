@@ -9,18 +9,19 @@ import { errorResponse } from "../../helpers/errorResponse";
 
 import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
 import { UseAppContext } from "../../hooks/AppContextProvider";
-import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
+import usePosition from "../../hooks/usePosition";
 
 const Today = () => {
-  const [validationCurrentPosition] = useValidationCurrentPosition();
+  const { currentPosition } = usePosition();
   const { city, setCity } = UseAppContext();
+
   const [weatherToday, setWeatherToday] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
 
   const getWeather = async () => {
     setIsResponse(false);
 
-    validationCurrentPosition()
+    currentPosition()
       .then(async (position) => {
         const { data } = await GetWeatherToday(
           position.coords.latitude,
