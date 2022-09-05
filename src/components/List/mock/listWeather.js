@@ -1,0 +1,58 @@
+export default [
+  {
+    day: "Hoje",
+    temp_max: 20,
+    temp_min: 11,
+    textWeather: "chuva leve",
+    iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
+  },
+  {
+    day: "quarta, 29 de jun de   2022",
+    temp_max: 18,
+    temp_min: 9,
+    textWeather: "nuvens dispersas",
+    iconUrl: "http://openweathermap.org/img/wn/03d@2x.png",
+  },
+  {
+    day: "quinta, 30 de jun de   2022",
+    temp_max: 21,
+    temp_min: 9,
+    textWeather: "céu limpo",
+    iconUrl: "http://openweathermap.org/img/wn/01d@2x.png",
+  },
+  {
+    day: "sexta, 01 de jul de   2022",
+    temp_max: 22,
+    temp_min: 12,
+    textWeather: "céu limpo",
+    iconUrl: "http://openweathermap.org/img/wn/01d@2x.png",
+  },
+  {
+    day: "sábado, 02 de jul de   2022",
+    temp_max: 22,
+    temp_min: 15,
+    textWeather: "algumas nuvens",
+    iconUrl: "http://openweathermap.org/img/wn/02d@2x.png",
+  },
+  {
+    day: "domingo, 03 de jul de   2022",
+    temp_max: 23,
+    temp_min: 15,
+    textWeather: "céu limpo",
+    iconUrl: "http://openweathermap.org/img/wn/01d@2x.png",
+  },
+  {
+    day: "segunda, 04 de jul de   2022",
+    temp_max: 23,
+    temp_min: 17,
+    textWeather: "céu limpo",
+    iconUrl: "http://openweathermap.org/img/wn/01d@2x.png",
+  },
+  {
+    day: "terça, 05 de jul de   2022",
+    temp_max: 21,
+    temp_min: 17,
+    textWeather: "nublado",
+    iconUrl: "http://openweathermap.org/img/wn/04d@2x.png",
+  },
+];

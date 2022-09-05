@@ -12,6 +12,7 @@ const HeaderToggle = () => {
       <ul>
         <li>
           <Link
+            role="button"
             isSelected={wrapperType === "TODAY"}
             href="#"
             onClick={() => {
@@ -23,6 +24,7 @@ const HeaderToggle = () => {
         </li>
         <li>
           <Link
+            role="button"
             isSelected={wrapperType === "TOMORROW"}
             href="#"
             onClick={() => {
@@ -34,6 +36,7 @@ const HeaderToggle = () => {
         </li>
         <li>
           <Link
+            role="button"
             isSelected={wrapperType === "WEEK"}
             href="#"
             onClick={() => {

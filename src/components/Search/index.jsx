@@ -10,9 +10,7 @@ const Search = () => {
   const { city, setCity } = UseAppContext();
 
   const [listSearch, setListSearch] = React.useState([]);
-  const [inputValue, setInputValue] = React.useState(
-    formatStringAddressWriting(city)
-  );
+  const [inputValue, setInputValue] = React.useState("");
 
   React.useEffect(() => {
     const filterSearch = filter(inputValue);
@@ -27,6 +25,7 @@ const Search = () => {
     <Container>
       <Details>
         <input
+          aria-label="search-city"
           placeholder="Ex: Rio branco - Acre"
           value={inputValue}
           onChange={(e) => {

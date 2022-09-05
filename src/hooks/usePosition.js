@@ -1,7 +1,7 @@
 import React from "react";
 
-export const useValidationCurrentPosition = () => {
-  const validationCurrentPosition = () => {
+const usePosition = () => {
+  const currentPosition = () => {
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -21,5 +21,7 @@ export const useValidationCurrentPosition = () => {
     });
   };
 
-  return [validationCurrentPosition];
+  return { currentPosition };
 };
+
+export default usePosition;

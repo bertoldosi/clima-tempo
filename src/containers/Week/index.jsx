@@ -5,13 +5,14 @@ import List from "../../components/List";
 import { GetWeatherWeek } from "../../api/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
-import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
+import usePosition from "../../hooks/usePosition";
 import { errorResponse } from "../../helpers/errorResponse";
 import { toast } from "react-toastify";
 import ErrorMessage from "../../components/ErrorMessage";
 
 const Week = () => {
-  const [validationCurrentPosition] = useValidationCurrentPosition();
+  const { currentPosition } = usePosition();
+
   const [weatherWeek, setWeatherWeek] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
   const { city } = UseAppContext();
@@ -19,7 +20,7 @@ const Week = () => {
   const getWeather = () => {
     setIsResponse(false);
 
-    validationCurrentPosition()
+    currentPosition()
       .then(async (position) => {
         const { data } = await GetWeatherWeek(
           position.coords.latitude,

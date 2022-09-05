@@ -2,24 +2,26 @@ import React from "react";
 
 import Wrapper from "../../components/Wrapper";
 import Temperature from "../../components/Temperature";
-import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
-import { bolerplate } from "./bolerplate";
-import { UseAppContext } from "../../hooks/AppContextProvider";
-import { useValidationCurrentPosition } from "../../hooks/useValidationCurrentPosition";
-import { errorResponse } from "../../helpers/errorResponse";
-import { toast } from "react-toastify";
 import ErrorMessage from "../../components/ErrorMessage";
+import { toast } from "react-toastify";
+import { bolerplate } from "./bolerplate";
+import { errorResponse } from "../../helpers/errorResponse";
+
+import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
+import { UseAppContext } from "../../hooks/AppContextProvider";
+import usePosition from "../../hooks/usePosition";
 
 const Today = () => {
-  const [validationCurrentPosition] = useValidationCurrentPosition();
+  const { currentPosition } = usePosition();
   const { city, setCity } = UseAppContext();
+
   const [weatherToday, setWeatherToday] = React.useState();
   const [isResponse, setIsResponse] = React.useState(false);
 
   const getWeather = async () => {
     setIsResponse(false);
 
-    validationCurrentPosition()
+    currentPosition()
       .then(async (position) => {
         const { data } = await GetWeatherToday(
           position.coords.latitude,
