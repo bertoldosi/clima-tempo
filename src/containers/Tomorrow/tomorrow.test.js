@@ -3,14 +3,9 @@ import { render, screen } from "@testing-library/react";
 
 import usePosition from "../../hooks/usePosition";
 import { UseAppContext } from "../../hooks/AppContextProvider";
-import { GetWeatherCity, GetWeatherTomorrow } from "../../api/weather";
+import { GetWeatherTomorrow } from "../../api/weather";
 
-import {
-  mockCity,
-  mockGetWeatherCity,
-  mockGetWeatherTomorrow,
-  mockPosition,
-} from "./mock";
+import { mockCity, mockGetWeatherTomorrow, mockPosition } from "./mock";
 
 import Tomorrow from ".";
 
@@ -25,7 +20,6 @@ describe("Tomorrow test", () => {
     });
 
     UseAppContext.mockReturnValue(mockCity);
-    GetWeatherCity.mockReturnValue(mockGetWeatherCity);
     GetWeatherTomorrow.mockReturnValue(mockGetWeatherTomorrow);
 
     render(<Tomorrow />);
@@ -34,16 +28,16 @@ describe("Tomorrow test", () => {
       "Cascavel - Paraná"
     );
 
-    // expect(await screen.findByText(/^15$/i)).toBeInTheDocument();
-    // expect(await screen.findByText(/^Dia 19°$/i)).toBeInTheDocument();
-    // expect(await screen.findByText(/^Noite 14°$/i)).toBeInTheDocument();
-    // expect(await screen.findByText(/^Sensação 15°$/i)).toBeInTheDocument();
-    // expect(screen.getByRole("img")).toBeInTheDocument();
-    // expect(await screen.findByText(/^céu limpo$/i)).toBeInTheDocument();
-    // expect(
-    //   await screen.findByText(/^terça, 28 de jun de 2022$/i)
-    // ).toBeInTheDocument();
-    // expect(await screen.findByText(/^Cascavel - Paraná$/i)).toBeInTheDocument();
-    // expect(await screen.findByText(/^Boa tarde!$/i)).toBeInTheDocument();
+    expect(await screen.findByText(/^16$/i)).toBeInTheDocument();
+    expect(await screen.findByText(/^Dia 16°$/i)).toBeInTheDocument();
+    expect(await screen.findByText(/^Noite 9°$/i)).toBeInTheDocument();
+    expect(await screen.findByText(/^Sensação 15°$/i)).toBeInTheDocument();
+    expect(screen.getByRole("img")).toBeInTheDocument();
+    expect(await screen.findByText(/^nuvens dispersas$/i)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/^quarta, 29 de jun de 2022$/i)
+    ).toBeInTheDocument();
+    expect(await screen.findByText(/^Cascavel - Paraná$/i)).toBeInTheDocument();
+    expect(await screen.findByText(/^Boa tarde!$/i)).toBeInTheDocument();
   });
 });
