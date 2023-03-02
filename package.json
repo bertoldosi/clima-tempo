@@ -5,8 +5,7 @@
     "test:dev": "jest --watch",
     "test": "jest --coverage",
     "dev": "node server",
-    "start": "NODE_ENV=production node server",
-    "vercel-build": "npm run prepare && next build"
+    "start": "NODE_ENV=production node server"
   },
   "dependencies": {
     "axios": "^0.27.2",
