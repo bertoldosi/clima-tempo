@@ -2,11 +2,21 @@ const axios = require("axios");
 
 const APPID = process.env.APPID;
 
-const service = axios.create({
-  baseURL: "https://api-gateway-clima-tempo.herokuapp.com/",
+const serviceData = axios.create({
+  baseURL: "https://api.openweathermap.org/data/2.5",
   params: {
     appid: APPID,
   },
 });
 
-module.exports = service;
+const serviceGeo = axios.create({
+  baseURL: "https://api.openweathermap.org/geo/1.0",
+  params: {
+    appid: APPID,
+  },
+});
+
+module.exports = {
+  serviceData,
+  serviceGeo,
+};

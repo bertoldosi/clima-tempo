@@ -1,6 +1,9 @@
 require("dotenv").config();
 const express = require("express");
-const service = require("../utils/axios-instances-external");
+const {
+  serviceData,
+  serviceGeo,
+} = require("../utils/axios-instances-external");
 const router = express.Router();
 
 const APPID = process.env.APPID;
@@ -13,11 +16,10 @@ router.get("/today", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await service.get("/onecall", {
+    const response = await serviceData.get("/onecall", {
       params: {
         lat,
         lon,
-        appid: APPID,
         lang: "pt_br",
       },
     });
@@ -37,11 +39,10 @@ router.get("/tomorrow", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await service.get("/onecall", {
+    const response = await serviceData.get("/onecall", {
       params: {
         lat,
         lon,
-        appid: APPID,
         lang: "pt_br",
       },
     });
@@ -56,11 +57,10 @@ router.get("/week", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await service.get("/onecall", {
+    const response = await serviceData.get("/onecall", {
       params: {
         lat,
         lon,
-        appid: APPID,
         lang: "pt_br",
       },
     });
@@ -75,11 +75,10 @@ router.get("/city", async (req, res) => {
   const { lat, lon } = req.query;
 
   try {
-    const response = await service.get("/reverse", {
+    const response = await serviceGeo.get("/reverse", {
       params: {
         lat,
         lon,
-        appid: APPID,
       },
     });
 

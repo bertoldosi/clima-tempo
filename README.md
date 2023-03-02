@@ -69,15 +69,6 @@ cd clima-tempo
 
 ```bash
 
-# Pegando chave na api Rapidapi
-- Crie uma conta gratuitamente
-- Acesse o link https://rapidapi.com/developer/apps
-- Vai até a opção Security
-- Cole sua Application Key no arquivo .env
-
-Ex: REACT_APP_RAPIDAPI_KEY=Sua Application Key
-
-
 # Pegando chave na api Openweathermap
 - Crie uma conta gratuitamente
 - Acesse o link https://home.openweathermap.org/api_keys
