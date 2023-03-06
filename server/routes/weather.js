@@ -6,8 +6,6 @@ const {
 } = require("../utils/axios-instances-external");
 const router = express.Router();
 
-const APPID = process.env.APPID;
-
 router.get("/", async (req, res) => {
   res.status(200).send("Hello weather!");
 });
