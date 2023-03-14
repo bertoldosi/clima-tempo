@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { bolerplate } from "./bolerplate";
 import { errorResponse } from "../../helpers/errorResponse";
 
-import { GetWeatherCity, GetWeatherToday } from "../../api/weather";
+import { GetWeatherCity, GetWeatherToday } from "../../services/weather";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 import usePosition from "../../hooks/usePosition";
 

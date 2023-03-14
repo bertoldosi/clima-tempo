@@ -88,7 +88,7 @@ export const mockGetWeatherCity = {
     headers: {
       Accept: "application/json, text/plain, */*",
     },
-    baseURL: "http://localhost:3001",
+    baseURL: "http://localhost:3000",
     params: {
       lat: -24.9570178,
       lon: -53.4615512,

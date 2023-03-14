@@ -3,13 +3,13 @@ import { render, screen } from "@testing-library/react";
 
 import usePosition from "../../hooks/usePosition";
 import { UseAppContext } from "../../hooks/AppContextProvider";
-import { GetWeatherTomorrow } from "../../api/weather";
+import { GetWeatherTomorrow } from "../../services/weather";
 
 import { mockCity, mockGetWeatherTomorrow, mockPosition } from "./mock";
 
 import Tomorrow from ".";
 
-jest.mock("../../api/weather");
+jest.mock("../../services/weather");
 jest.mock("../../hooks/AppContextProvider");
 jest.mock("../../hooks/usePosition");
 

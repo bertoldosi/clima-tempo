@@ -4,8 +4,8 @@
     "build": "next build",
     "test:dev": "jest --watch",
     "test": "jest --coverage",
-    "dev": "node server",
-    "start": "NODE_ENV=production node server"
+    "dev": "next dev",
+    "start": "NODE_ENV=production next start"
   },
   "dependencies": {
     "axios": "^0.27.2",

@@ -2,7 +2,7 @@ import React from "react";
 
 import Wrapper from "../../components/Wrapper";
 import List from "../../components/List";
-import { GetWeatherWeek } from "../../api/weather";
+import { GetWeatherWeek } from "../../services/weather";
 import { bolerplate } from "./bolerplate";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 import usePosition from "../../hooks/usePosition";

@@ -3,7 +3,7 @@ import React from "react";
 import Wrapper from "../../components/Wrapper";
 import Temperature from "../../components/Temperature";
 import { bolerplate } from "./bolerplate";
-import { GetWeatherTomorrow } from "../../api/weather";
+import { GetWeatherTomorrow } from "../../services/weather";
 import { UseAppContext } from "../../hooks/AppContextProvider";
 import usePosition from "../../hooks/usePosition";
 import { errorResponse } from "../../helpers/errorResponse";
